@@ -1,0 +1,31 @@
+﻿빌드 시작: 2014-02-15 오후 6:16:24
+2 노드의 "C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
+ClCompile:
+  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib" /IC:\Users\eunjin\Desktop\IOAF2\sqlite /IC:\Users\eunjin\Desktop\IOAF2\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt module.cpp
+  module.cpp
+c:\users\eunjin\documents\visual studio 2012\projects\ioaf\ioaf\module.cpp(18): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
+c:\users\eunjin\documents\visual studio 2012\projects\ioaf\ioaf\module.cpp(22): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
+c:\users\eunjin\documents\visual studio 2012\projects\ioaf\ioaf\module.cpp(59): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 11.0\vc\include\wchar.h(784) : '_swprintf' 선언을 참조하십시오.
+c:\users\eunjin\documents\visual studio 2012\projects\ioaf\ioaf\module.cpp(111): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files\microsoft visual studio 11.0\vc\include\wchar.h(784) : '_swprintf' 선언을 참조하십시오.
+Link:
+  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\Debug\IOAF.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\eunjin\Desktop\IOAF2\sqlite /LIBPATH:"C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\Debug\IOAF.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\Debug\IOAF.lib" /MACHINE:X86 Debug\queue.obj
+  Debug\sql.obj
+  Debug\utc.obj
+  Debug\exreg.obj
+  Debug\mft_live.obj
+  Debug\module.obj
+  Debug\main.obj
+  Debug\mft_image.obj
+  Debug\mft_image2db.obj
+  Debug\parser.obj
+  Debug\registry.obj
+  IOAF.vcxproj -> C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\Debug\IOAF.exe
+"C:\Users\eunjin\Documents\Visual Studio 2012\Projects\IOAF\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:03.29
