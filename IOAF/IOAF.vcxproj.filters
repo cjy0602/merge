@@ -27,15 +27,6 @@
     <ClCompile Include="module.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\reg2sql\reg2sql\queue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\reg2sql\reg2sql\sql.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\reg2sql\reg2sql\utc.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="parser.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -48,6 +39,15 @@
     <ClCompile Include="mft_live.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="queue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="sql.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="utc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
@@ -56,13 +56,13 @@
     <ClInclude Include="module.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\test\test\sql.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="parser.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="exreg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="sql.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

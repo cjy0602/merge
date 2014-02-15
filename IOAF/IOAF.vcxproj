@@ -79,9 +79,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\reg2sql\reg2sql\queue.cpp" />
-    <ClCompile Include="..\..\reg2sql\reg2sql\sql.cpp" />
-    <ClCompile Include="..\..\reg2sql\reg2sql\utc.cpp" />
     <ClCompile Include="exreg.cpp" />
     <ClCompile Include="mft_live.cpp" />
     <ClCompile Include="module.cpp" />
@@ -89,14 +86,17 @@
     <ClCompile Include="mft_image.cpp" />
     <ClCompile Include="mft_image2db.cpp" />
     <ClCompile Include="parser.cpp" />
+    <ClCompile Include="queue.cpp" />
     <ClCompile Include="registry.cpp" />
+    <ClCompile Include="sql.cpp" />
+    <ClCompile Include="utc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\test\test\sql.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="module.h" />
     <ClInclude Include="parser.h" />
     <ClInclude Include="exreg.h" />
+    <ClInclude Include="sql.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
