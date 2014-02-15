@@ -9,12 +9,11 @@
 
 void push(REGQUEUE* q, char * path, long long time)
 {
-	REGISTRY *reg;
+	REGISTRY * reg;
 	
 	reg=(REGISTRY*)malloc(sizeof(REGISTRY));
-	memset(reg, '\x00', sizeof(REGISTRY));
+	//memset(reg, '\x00', sizeof(REGISTRY));
 	sprintf(reg->key, "%s\x00", path);
 	reg->time=WindowsTickToUnixSeconds(time);
 	q->push(reg);
-//	free(path);
 }
