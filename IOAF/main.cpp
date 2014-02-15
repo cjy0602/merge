@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <tchar.h>
 #include <tsk\libtsk.h>
 #include <tsk\tsk_tools_i.h>
+=======
+#include<stdio.h>
+#include<tchar.h>
+#include <tsk\libtsk.h>
+#include<tsk\tsk_tools_i.h>
+>>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 #include "sql.h"
 #include "module.h"
 

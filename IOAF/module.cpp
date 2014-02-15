@@ -3,6 +3,7 @@
 #include "tsk\tsk_tools_i.h"
 #include "parser.h"
 
+<<<<<<< HEAD
 void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 {
 	char* ctmp;
@@ -18,10 +19,27 @@ void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 	WideCharToMultiByte(CP_ACP, 0, CaseName, -1, ctmp2, len2, NULL, NULL);
 
 	mft_live(ctmp, ctmp2);   // mft_live("Volname", "CaseName");
+=======
+void mft_live_module(TCHAR *volName, TCHAR * CaseName)
+{
+	
+	wcslen(CaseName);
+	char* Casetmp;
+	
+	WideCharToMultiByte(CP_ACP, 0, CaseName, wcslen(CaseName), Casetmp, wcslen(CaseName), NULL, NULL);
+	Casetmp
+	char* ctmp;
+	int len; 
+	len = wcslen(volName);
+	ctmp = new char[len];
+	WideCharToMultiByte(CP_ACP, 0, volName, -1, ctmp, len, NULL, NULL);
+	mft_live(ctmp, Casetmp);
+>>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 }
 
 void mft_image_module(TCHAR * ImagePath, TCHAR * CaseName)
 {
+<<<<<<< HEAD
 
 	char* ctmp;
 	int len; 
@@ -44,6 +62,18 @@ void mft_image_module(TCHAR * ImagePath, TCHAR * CaseName)
 	
 	if ( remove(case_path) == -1 )
 		perror ( "Could not delete image.mft file\n");
+=======
+	
+	if (freopen("./case/image.mft", "w", stdout) == NULL)
+			fprintf(stderr, "error redirecting stdout\n");
+		mft_image(ImagePath);
+		fclose (stdout);
+		freopen("CON", "w", stdout);
+		//printf("image.mft 생성 완료\n");
+		mft_image2db();
+		if ( remove("./case/image.mft") == -1 )
+			perror ( "Could not delete image.mft file\n");
+>>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 
 }
 void reg_live_module(TCHAR *volName, TCHAR * CaseName)
