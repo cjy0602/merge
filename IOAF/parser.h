@@ -56,9 +56,9 @@ struct
 typedef queue<REGISTRY *> REGQUEUE;
 void push(REGQUEUE* q, char * path, long long time);
 void walk (char* path,   key_block* key, REGQUEUE *q, char *root, char *full);
-//void walk ( char* path,   key_block* key, REGQUEUE *q, char* name, int size);
+void walk_nt( char* path,   key_block* key, REGQUEUE *q, char *root, char *full, char* name);
 void chkKey(char *full, long long time, REGQUEUE *q);
-void chkKey(char *full, long long time, REGQUEUE *q, char* name);
+void chkKey_nt(char *full, long long time, REGQUEUE *q, char* name);
 
 #define WINDOWS_TICK 10000000
 #define SEC_TO_UNIX_EPOCH 11644473600LL
@@ -66,4 +66,6 @@ void chkKey(char *full, long long time, REGQUEUE *q, char* name);
 unsigned WindowsTickToUnixSeconds(long long windowsTicks);
 
 int parser(char* fpath, REGQUEUE *q);
+int parser(char* fpath, REGQUEUE *q, char * name);
+
 #endif

@@ -1,7 +1,8 @@
 #include "module.h"
 #include "sql.h"
-#include "tsk\tsk_tools_i.h"
+#include <tsk\tsk_tools_i.h>
 #include "parser.h"
+#include "exreg.h"
 
 void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 {
@@ -81,7 +82,7 @@ void reg_live_module(TCHAR *volName, TCHAR * CaseName)
 	char Ppath[256];
 	memset(Ppath, '\x00', strlen(Ppath));
 	WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
-
+	ntuser_hive(fs);
 	carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL);
 	parser(Ppath, &q);
 	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL);
@@ -134,7 +135,8 @@ void reg_image_module(TCHAR *ImagePath, int offset, TCHAR* CaseName)
 	char Ppath[256];
 	memset(Ppath, '\x00', strlen(Ppath));
 	WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
-
+	
+	ntuser_hive(fs);
 	carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL);
 	parser(Ppath, &q);
 	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL);

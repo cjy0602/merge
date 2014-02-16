@@ -37,20 +37,13 @@ void walk ( char* path,   key_block* key, REGQUEUE *q, char *root, char *full ) 
     }
 
 }
-/*
-void walk ( char* path,   key_block* key, REGQUEUE *q, char* name , int size) {
-	static  char* root=(char*)key-0x20, *full=path;
-	 
-	
-	//printf("%lu\n", WindowsTickToUnixSeconds(key->time));
-    //add current key name to printed path
-	char buf[0x1000];
-	memset(buf, '\x00', 0x1000);
+void walk_nt( char* path,   key_block* key, REGQUEUE *q, char *root, char *full, char *name ) {	
 
 	memcpy(path++,"/",2); 
 	memcpy(path,&key->name,key->len); path+=key->len;
+	*path = 0;
 	memset(path,'\x00',full+0x1000-path);
-	chkKey(full, key->time, q);
+	chkKey_nt(full, key->time, q, name);
 	
 
     // for simplicity we can imagine keys as directories in filesystem and values
@@ -58,7 +51,10 @@ void walk ( char* path,   key_block* key, REGQUEUE *q, char* name , int size) {
     // and since we already dumped values for this dir we will now iterate 
     // thru subdirectories in the same way
 
+	//if((unsigned int)(key->subkeys) < 0x1000 || (unsigned int)(root+key->subkeys)>size)
+	//	return ;
     offsets* item = (offsets*)(root+key->subkeys);
+
     for(int i=0;i<item->count;i++){
         // in case of too many subkeys this list contain just other lists
         offsets* subitem = (offsets*)((&item->first)[i]+root);
@@ -66,18 +62,14 @@ void walk ( char* path,   key_block* key, REGQUEUE *q, char* name , int size) {
         // usual directory traversal  
         if(item->block_type[1]=='f'||item->block_type[1]=='h') {
             // for now we skip hash codes (used by regedit for faster search)
-            walk(path,(key_block*)((&item->first)[i*2]+root), q);
+            walk_nt(path,(key_block*)((&item->first)[i*2]+root), q, root, full, name);
         } else for(int j=0;j<subitem->count;j++) {
-			if(item->block_type[1]=='i') {
-					int g=0;
-			}
-            // also ms had chosen to skip hashes altogether in this case 
-			walk(path,(key_block*)((&subitem->first)[item->block_type[1]=='i'?j*2:j]+root), q);
+			// also ms had chosen to skip hashes altogether in this case 
+			walk_nt(path,(key_block*)((&subitem->first)[item->block_type[1]=='i'?j*2:j]+root), q, root, full, name);
         }
     }
 
 }
-*/
 void chkKey(char *full, long long time, REGQUEUE *q)
 {
 
@@ -131,28 +123,25 @@ void chkKey(char *full, long long time, REGQUEUE *q)
 	
 }
 
-void chkKey(char *full, long long time, REGQUEUE *q, char * name)
+void chkKey_nt(char *full, long long time, REGQUEUE *q, char * name)
 {
 	char NTUSER[]="/CMI-CreateHive{6A1C4018-979D-4291-A7DC-7AED1C75B67C}";
 	
-	char *tmp = (char * ) malloc ( sizeof(char)*0x1000);
+	char tmp[0x1000];
 	memset(tmp, '\x00', 0x1000);
 	//printf("%s %d\n", full, strlen(full+53));
 	//printf("%s\n", full+53);
 	if ( !strncmp(NTUSER, full, 53)){
-		if ( !strncmp("classes/", full+53, strlen("classes/"))){
+		if ( !strncmp("/classes", full+53, strlen("/classes"))){
 			sprintf(tmp, "HKCR/software%s", full+53);
 			push(q, tmp, time);
-			free(tmp);
 		}
 		memset(tmp, '\x00', sizeof(tmp));
-		sprintf(tmp, "HKU/software%s", full+53);
+		sprintf(tmp, "HKU/%s%s",name, full+53);
 		push(q, tmp, time);
-		free(tmp);
 	}
 	else {
 		printf("fail");
-		free(tmp);
 	}
 
 }

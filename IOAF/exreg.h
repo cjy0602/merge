@@ -13,3 +13,6 @@ uint8_t hive_extract(TSK_FS_INFO * fs, TSK_INUM_T inum,
 static TSK_WALK_RET_ENUM
 	hive_action(TSK_FS_FILE * fs_file, TSK_OFF_T a_off, TSK_DADDR_T addr,
     char *buf, size_t size, TSK_FS_BLOCK_FLAG_ENUM flags, void *ptr);
+
+void ntuser_hive(TSK_FS_INFO *fs);
+TSK_WALK_RET_ENUM callback(TSK_FS_FILE * fs_file, const char* path, void * ptr);
