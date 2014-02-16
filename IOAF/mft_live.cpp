@@ -141,18 +141,11 @@ char getvolume(char **ppath)
    return volname;
 }
 
-<<<<<<< HEAD
 int MFTtest(struct mftstruct  *u3, char *casename)
 {
     sqlite3 *db = NULL; 
     sqlite3_stmt *stmt = NULL; //sqlite3 statement 
 	char path[MAX_PATH] = {0,};
-=======
-int MFTtest(struct mftstruct  *u3)
-{
-    sqlite3 *db = NULL; 
-    sqlite3_stmt *stmt = NULL; //sqlite3 statement 
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     char *sql; 
     int rc;
     unsigned int i;
@@ -160,27 +153,19 @@ int MFTtest(struct mftstruct  *u3)
  
     memset(buffer, 0x00, sizeof(char)*500);
 
-<<<<<<< HEAD
 	sprintf(path, ".\/%s\/info.db", casename);
 
     //int error = sqlite3_open("./case/info.db", &db);
 	int error = sqlite3_open(path, &db);
-=======
-    int error = sqlite3_open("./case/info.db", &db);
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     if(error)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
     fprintf(stdout, "DB연결 완료.\n");
-<<<<<<< HEAD
 
 
 	if(sqlite3_open(path, &db) != SQLITE_OK)
     //if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
-=======
-    if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
@@ -216,7 +201,6 @@ int MFTtest(struct mftstruct  *u3)
       sqlite3_bind_text(stmt, 1, u3[i].FILENAME, strlen(u3[i].FILENAME), SQLITE_STATIC);
       sqlite3_bind_text(stmt, 2, u3[i].FULLPATH, strlen(u3[i].FULLPATH), SQLITE_STATIC);
       sqlite3_bind_int(stmt, 3, (int)(u3[i].entry));
-<<<<<<< HEAD
 	  sqlite3_bind_int(stmt, 4, (int)(u3[i].ParentRef));
 	  sqlite3_bind_int(stmt, 5, (int)(u3[i].SI_writeTm));
       sqlite3_bind_int(stmt, 6, (int)(u3[i].SI_createTm));
@@ -226,17 +210,6 @@ int MFTtest(struct mftstruct  *u3)
       sqlite3_bind_int(stmt, 10, (int)(u3[i].FN_createTm));
 	  sqlite3_bind_int(stmt, 11, (int)(u3[i].FN_accessTm));
       sqlite3_bind_int(stmt, 12, (int)(u3[i].FN_mftTm));
-=======
-        sqlite3_bind_int(stmt, 4, (int)(u3[i].ParentRef));
-        sqlite3_bind_int(stmt, 5, (int)(u3[i].SI_writeTm));
-        sqlite3_bind_int(stmt, 6, (int)(u3[i].SI_createTm));
-        sqlite3_bind_int(stmt, 7, (int)(u3[i].SI_accessTm));
-        sqlite3_bind_int(stmt, 8, (int)(u3[i].SI_mftTm));
-        sqlite3_bind_int(stmt, 9, (int)(u3[i].FN_writeTm));
-        sqlite3_bind_int(stmt, 10, (int)(u3[i].FN_createTm));
-        sqlite3_bind_int(stmt, 11, (int)(u3[i].FN_accessTm));
-        sqlite3_bind_int(stmt, 12, (int)(u3[i].FN_mftTm));
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 
 
         if ( sqlite3_step(stmt) != SQLITE_DONE )  {
@@ -259,11 +232,7 @@ int MFTtest(struct mftstruct  *u3)
     return 0;
  }
 
-<<<<<<< HEAD
 int mft_live(char *path, char *casename)
-=======
-int mft_live(char *path)
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 {
    clock_t start, end; 
 
@@ -452,17 +421,10 @@ int mft_live(char *path)
 
 
    end = clock();
-<<<<<<< HEAD
    //printf("\n##### 전체 소요시간 : %5.2f초 #####\n", (float)(end-start)/CLOCKS_PER_SEC);
    //printf("Files: %d, Directories: %d\n", totalfiles, totaldirs);
 
    MFTtest(u3, casename);
-=======
-   printf("\n##### 전체 소요시간 : %5.2f초 #####\n", (float)(end-start)/CLOCKS_PER_SEC);
-
-   printf("Files: %d, Directories: %d\n", totalfiles, totaldirs);
-   MFTtest(u3);
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 
    free(u3);
    return 0;

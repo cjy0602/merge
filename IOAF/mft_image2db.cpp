@@ -14,17 +14,12 @@ struct MFT {
 typedef struct MFT test;
 
 
-<<<<<<< HEAD
 int MFTtest(struct MFT  *u3, int countresult, char* case_name)
-=======
-int MFTtest(struct MFT  *u3, int countresult)
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 {
     sqlite3 *db = NULL;
     sqlite3_stmt *stmt = NULL;
     char *sql;
     int rc;
-<<<<<<< HEAD
 	char path[_MAX_PATH] = {0,};
     int j;
     unsigned int i;
@@ -36,27 +31,15 @@ int MFTtest(struct MFT  *u3, int countresult)
 
     //int error = sqlite3_open("./case/info.db", &db);
 	int error = sqlite3_open(path, &db);
-=======
-    int j;
-    unsigned int i;
-    char *buffer = (char *)malloc(500);
-    memset(buffer, 0x00, sizeof(char)*500);
-
-    int error = sqlite3_open("./case/info.db", &db);
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     if(error)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
     fprintf(stdout, "DB연결 완료.\n");
 	// case를 -n인자로 받은 폴더 명 수정 필요.
-<<<<<<< HEAD
 
 	if(sqlite3_open(path, &db) != SQLITE_OK)
     //if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
-=======
-    if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
@@ -106,11 +89,7 @@ int MFTtest(struct MFT  *u3, int countresult)
     return 0;
  }
  
-<<<<<<< HEAD
 int mft_image2db(char* case_path, char* case_name)
-=======
-int mft_image2db()
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 {
 	FILE *f;
 	char buf[256];
@@ -126,12 +105,8 @@ int mft_image2db()
 	}
 
 	// case는 -n인자로 받은 폴더명, 수정필요.
-<<<<<<< HEAD
 	//f = fopen("./case/image.mft","rt");
 	f = fopen(case_path, "rt");
-=======
-	f = fopen("./case/image.mft","rt");
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 
 	if(f!=NULL){
 		for(i=0;f!=NULL;i++){
@@ -160,11 +135,7 @@ int mft_image2db()
 		}
 		fclose(f);
 	}
-<<<<<<< HEAD
 	MFTtest(u3,count,case_name);
-=======
-	MFTtest(u3,count);
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
 	free(u3);
 
 	return 0;

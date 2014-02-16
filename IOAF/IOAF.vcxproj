@@ -52,20 +52,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-<<<<<<< HEAD
       <AdditionalIncludeDirectories>C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;C:\Users\cjy\Desktop\MFTParser\NTFSLib;C:\Users\cjy\Desktop\MFTParser\include\include;C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib;C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\eunjin\Desktop\IOAF2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-=======
-      <AdditionalIncludeDirectories>C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib;C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\eunjin\Desktop\IOAF2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-<<<<<<< HEAD
       <AdditionalLibraryDirectories>C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug;C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-=======
-      <AdditionalLibraryDirectories>C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 976896b7cbee5005f28ccd4663ebe7f55532150e
       <AdditionalDependencies>sqlite3.lib;zdll.lib;libewf.lib;libtsk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
