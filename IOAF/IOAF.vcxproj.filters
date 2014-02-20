@@ -48,6 +48,9 @@
     <ClCompile Include="utc.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="iehist.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
