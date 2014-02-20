@@ -3,15 +3,33 @@
 #include <tsk\tsk_tools_i.h>
 #include "parser.h"
 #include "exreg.h"
-
-void ie_hist_module()
+#include "define.h"
+#include "match.h"
+/*
+void ie_hist_module(TSK_FS_INFO *fs)
 {
-	iehist("index_history.dat", 1);
-	iehist("index_cache.dat", 1);
-	iehist("index_cookie.dat", 1);
-	iehist("index_download.dat", 2);
+	if (carving_hive(L"index_history.dat", fs, NULL))
+	{
+		iehist("index_history.dat", 1);
+		unlink("tmp");
+	}
+	if (carving_hive(L"index_cache.dat", fs, NULL))
+	{
+		iehist("index_history.dat", 1);
+		unlink("tmp");
+	}
+	if (carving_hive(L"index_cookie.dat", fs, NULL))
+	{
+		iehist("index_history.dat", 1);
+		unlink("tmp");
+	}
+	if (carving_hive(L"index_download.dat", fs, NULL))
+	{
+		iehist("index_history.dat", 1);
+		unlink("tmp");
+	}
 }
-
+*/
 
 void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 {
@@ -55,12 +73,10 @@ void mft_image_module(TCHAR * ImagePath, TCHAR * CaseName)
 		perror ( "Could not delete image.mft file\n");
 
 }
-void reg_live_module(TCHAR *volName, TCHAR * CaseName)
+int open_fs_live(TCHAR *volName, TSK_IMG_INFO **img,TSK_FS_INFO **fs )
 {
 	TSK_IMG_TYPE_ENUM imgtype = TSK_IMG_TYPE_DETECT;
-	TSK_IMG_INFO *img;
 	TSK_FS_TYPE_ENUM fstype = TSK_FS_TYPE_DETECT;
-	TSK_FS_INFO *fs;
 	TSK_TCHAR *drivename;
 	TSK_INUM_T inode=0;
 //	TSK_FS_NAME *fName;
@@ -71,95 +87,161 @@ void reg_live_module(TCHAR *volName, TCHAR * CaseName)
 
 	drivename = volName;
 	
-	if((img = tsk_img_open(1, &drivename, imgtype, sectorSize)) == NULL ){
+	if((*img = tsk_img_open(1, &drivename, imgtype, sectorSize)) == NULL ){
 		tsk_error_print(stderr);
 		exit(EXIT_FAILURE);
 	}
 
-	if((fs=tsk_fs_open_img(img, 0*img->sector_size, fstype)) == NULL){
+	if((*fs=tsk_fs_open_img(*img, 0, fstype)) == NULL){
 		tsk_error_print(stderr);
 		if(tsk_error_get_errno()==TSK_ERR_FS_UNSUPTYPE)
 			tsk_fs_type_print(stderr);
-		img->close(img);
+		(*img)->close(*img);
 		exit(EXIT_FAILURE);
 	}
-	TCHAR parser_path[256];
-	memset(parser_path, '\x00',wcslen(parser_path));
-	_stprintf(parser_path, _TSK_T("%s\\tmp"), CaseName);
-	REGQUEUE q;
-	char Ppath[256];
-	memset(Ppath, '\x00', strlen(Ppath));
-	WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
-	ntuser_hive(fs);
-	carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/DEFAULT"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SAM"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SECURITY"), fs, NULL);
-	parser(Ppath, &q);
-	
 
-	reg2sql(&q);
-
-	
+	return 0;
 }
-void reg_image_module(TCHAR *ImagePath, int offset, TCHAR* CaseName)
+
+int open_fs_image(TCHAR *ImagePath, int offset, TSK_IMG_INFO **img,TSK_FS_INFO **fs )
 {
+	
 	TSK_IMG_TYPE_ENUM imgtype = TSK_IMG_TYPE_DETECT;
-	TSK_IMG_INFO *img;
 	TSK_FS_TYPE_ENUM fstype = TSK_FS_TYPE_DETECT;
-	TSK_FS_INFO *fs;
 	TSK_TCHAR *drivename;
 	TSK_INUM_T inode=0;
-//	TSK_FS_NAME *fName;
 	UINT sectorSize=0;
 	TSK_FS_ATTR_TYPE_ENUM TYPE = TSK_FS_ATTR_TYPE_DEFAULT;
 	char path[]="tmp";
-//	fName=(TSK_FS_NAME*)malloc(sizeof(TSK_FS_NAME));
-
 	drivename = ImagePath;
 	
-	if((img = tsk_img_open(1, &drivename, imgtype, sectorSize)) == NULL ){
+	if((*img = tsk_img_open(1, &drivename, imgtype, sectorSize)) == NULL ){
 		tsk_error_print(stderr);
 		exit(EXIT_FAILURE);
 	}
 
-	if((fs=tsk_fs_open_img(img, offset*img->sector_size, fstype)) == NULL){
+	if((*fs=tsk_fs_open_img(*img, offset*(*img)->sector_size, fstype)) == NULL){
 		tsk_error_print(stderr);
 		if(tsk_error_get_errno()==TSK_ERR_FS_UNSUPTYPE)
 			tsk_fs_type_print(stderr);
-		img->close(img);
+		(*img)->close(*img);
 		exit(EXIT_FAILURE);
 	}
-	TCHAR parser_path[256];
-	memset(parser_path, '\x00',wcslen(parser_path));
-	_stprintf(parser_path, _TSK_T("%s\\tmp"), CaseName);
+	return 0;
+}
+
+
+void reg_live_module(TSK_FS_INFO *fs)
+{
+	
+	//TCHAR parser_path[256];
+	//memset(parser_path, '\x00',wcslen(parser_path));
+	//_stprintf(parser_path, _TSK_T("%s\\tmp"), CaseName);
+	REGQUEUE q;
+	//char Ppath[256];
+	//memset(Ppath, '\x00', strlen(Ppath));
+	//WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
+	ntuser_hive(fs);
+	if(carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if(	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/DEFAULT"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/SAM"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/SECURITY"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+
+	if (!q.empty()) 	reg2sql(&q);
+}
+void img_fs_close(TSK_IMG_INFO **img,TSK_FS_INFO **fs )
+{
+	(*fs)->close(*fs);
+	(*img)->close(*img);
+}
+
+void reg_image_module(TSK_FS_INFO *fs)
+{
+	
+	//TCHAR parser_path[256];
+	//memset(parser_path, '\x00',wcslen(parser_path));
+	//_stprintf(parser_path, _TSK_T("%s\\tmp"), CaseName);
 
 	REGQUEUE q;
-	char Ppath[256];
-	memset(Ppath, '\x00', strlen(Ppath));
-	WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
-	
+	//char Ppath[256];
+	//memset(Ppath, '\x00', strlen(Ppath));
+	//WideCharToMultiByte(CP_ACP, 0, parser_path, wcslen(parser_path), Ppath, wcslen(parser_path), NULL, NULL);
 	ntuser_hive(fs);
-	carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/DEFAULT"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SAM"), fs, NULL);
-	parser(Ppath, &q);
-	carving_hive(_TSK_T("/Windows/System32/config/SECURITY"), fs, NULL);
-	parser(Ppath, &q);
-	
+	if(carving_hive(_TSK_T("/Windows/System32/config/SYSTEM"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if(	carving_hive(_TSK_T("/Windows/System32/config/SOFTWARE"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/DEFAULT"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/SAM"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+	if (carving_hive(_TSK_T("/Windows/System32/config/SECURITY"), fs, NULL))
+	{
+		parser("tmp", &q);
+		unlink("tmp");
+	}
+
+	if (!q.empty()) 	reg2sql(&q);
+
 }
 void deepscan(TCHAR * CaseName)
 {
+	SIGREGQ rq;
+	SIGFILEQ fq;
+	MATCHREGQ mq;
+	MATCHFILEQ mfq;
+
+	get_signature_REG(&rq);
+	get_signature_FILE(&fq);
+	Deep_matching_REG(&rq, &mq);
+	Deep_matching_FILE(&fq, &mfq);
+	REG2SQL(&mq);
+	FILE2SQL(&mfq);
 }
 void scan(TCHAR * CaseName)
 {
+	SIGREGQ rq;
+	SIGFILEQ fq;
+	MATCHREGQ mq;
+	MATCHFILEQ mfq;
+
+	get_signature_REG(&rq);
+	get_signature_FILE(&fq);
+	matching_REG(&rq, &mq);
+	matching_FILE(&fq, &mfq);
+	REG2SQL(&mq);
+	FILE2SQL(&mfq);
 }

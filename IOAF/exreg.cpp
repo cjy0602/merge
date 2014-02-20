@@ -133,3 +133,72 @@ TSK_WALK_RET_ENUM callback(TSK_FS_FILE * fs_file, const char* path, void * ptr)
 	reg2sql(&nq);
 	return TSK_WALK_CONT;
 }
+void ie_file(TSK_FS_INFO *fs)
+{
+	TSK_INUM_T inode;
+	void * ptr= NULL;
+	tsk_fs_path2inum(fs, "/Users", &inode, NULL);
+	tsk_fs_dir_walk(fs, inode, TSK_FS_DIR_WALK_FLAG_NONE, callback2, ptr);
+
+
+}
+
+TSK_WALK_RET_ENUM callback2(TSK_FS_FILE * fs_file, const char* path, void * ptr)
+{
+	char tmp[0x1000];
+	memset(tmp, 0, 0x1000);
+	TCHAR filename[0x1000];
+	memset(filename, 0, 0x1000);
+	REGQUEUE nq;
+	if (fs_file->name->type==TSK_FS_NAME_TYPE_DIR && c>1){
+		//printf("%s %s\n", fs_file->name->name, path);
+
+		sprintf(tmp, "/Users/%s/AppData/Local/Microsoft/Windows/History/History.IE5/index.dat", fs_file->name->name);
+		MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), filename, strlen(tmp));
+		printf("Starting extract \"%s\"\n", tmp);
+
+		if(carving_hive(filename, fs_file->fs_info, NULL)){
+			iehist("tmp", 1);
+			unlink("tmp");
+		}
+
+		memset(tmp, 0, 0x1000);
+		memset(filename, 0, 0x1000);
+		
+		sprintf(tmp, "/Users/%s/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.IE5/index.dat", fs_file->name->name);
+		MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), filename, strlen(tmp));
+		printf("Starting extract \"%s\"\n", tmp);
+
+		if(carving_hive(filename, fs_file->fs_info, NULL)){
+			iehist("tmp", 1);
+			unlink("tmp");
+		}
+
+		memset(tmp, 0, 0x1000);
+		memset(filename, 0, 0x1000);
+		
+		sprintf(tmp, "/Users/%s/AppData/Roaming/Microsoft/Windows/Cookies/index.dat", fs_file->name->name);
+		MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), filename, strlen(tmp));
+		printf("Starting extract \"%s\"\n", tmp);
+
+		if(carving_hive(filename, fs_file->fs_info, NULL)){
+			iehist("tmp", 1);
+			unlink("tmp");
+		}
+		memset(tmp, 0, 0x1000);
+		memset(filename, 0, 0x1000);
+
+		sprintf(tmp, "/Users/%s/AppData/Roaming/Microsoft/Winodws/IEDownloadHistory/index.dat", fs_file->name->name);
+		MultiByteToWideChar(CP_ACP, 0, tmp, strlen(tmp), filename, strlen(tmp));
+		printf("Starting extract \"%s\"\n", tmp);
+
+		if(carving_hive(filename, fs_file->fs_info, NULL)){
+			iehist("tmp", 2);
+			unlink("tmp");
+		}
+
+	}
+	c++;
+
+	return TSK_WALK_CONT;
+}

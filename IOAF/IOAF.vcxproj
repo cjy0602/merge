@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClCompile Include="exreg.cpp" />
     <ClCompile Include="iehist.cpp" />
+    <ClCompile Include="match.cpp" />
     <ClCompile Include="mft_live.cpp" />
     <ClCompile Include="module.cpp" />
     <ClCompile Include="main.cpp" />
@@ -94,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h" />
+    <ClInclude Include="match.h" />
     <ClInclude Include="module.h" />
     <ClInclude Include="parser.h" />
     <ClInclude Include="exreg.h" />

@@ -394,7 +394,7 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
-    fprintf(stdout, "DB연결 완료.\n");
+   // fprintf(stdout, "DB연결 완료.\n");
     if(sqlite3_open("info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
@@ -454,7 +454,7 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
         sqlite3_reset(stmt);
     }
     rc = sqlite3_exec(db, "COMMIT TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit result : %s\n", errorMsg);
+   // fprintf(stderr, " Commit result : %s\n", errorMsg);
     sqlite3_finalize(stmt);
 
     sqlite3_close(db);
@@ -519,7 +519,7 @@ int MOD2(struct history_download_saved  *his, DWORD dwURLCount)
 
     if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK)
     {
-        puts(">> Prepared Statement is ready : Succeeded!\n");
+       // puts(">> Prepared Statement is ready : Succeeded!\n");
     }
     else
     {
@@ -545,7 +545,7 @@ int MOD2(struct history_download_saved  *his, DWORD dwURLCount)
         sqlite3_reset(stmt);
     }
     rc = sqlite3_exec(db, "COMMIT TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit result : %s\n", errorMsg);
+   // fprintf(stderr, " Commit result : %s\n", errorMsg);
     sqlite3_finalize(stmt);
 
     sqlite3_close(db);

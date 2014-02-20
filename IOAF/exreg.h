@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<tsk\tsk_tools_i.h>
 #include<tsk\libtsk.h>
+#include "define.h"
 
 #pragma once
 
@@ -16,3 +17,6 @@ static TSK_WALK_RET_ENUM
 
 void ntuser_hive(TSK_FS_INFO *fs);
 TSK_WALK_RET_ENUM callback(TSK_FS_FILE * fs_file, const char* path, void * ptr);
+
+void ie_file(TSK_FS_INFO *fs);
+TSK_WALK_RET_ENUM callback2(TSK_FS_FILE * fs_file, const char* path, void * ptr);
