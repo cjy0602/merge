@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <Windows.h>
 #include <tchar.h>
 #include <tsk\libtsk.h>
 #include <tsk\tsk_tools_i.h>
+#include <direct.h>  
 #include "sql.h"
 #include "module.h"
 
@@ -24,73 +26,141 @@ void _tmain(int argc, TSK_TCHAR **argv)
 	int opt=0;
 	int deepchk=0;
 	int live=1;
-	TSK_TCHAR * ImagePath = NULL;
-	TSK_TCHAR * CaseName = NULL;
-	TSK_TCHAR * DriveName = NULL;
-	TSK_TCHAR * VolumeName = NULL;
+	TSK_TCHAR *ImagePath = NULL;
+	TSK_TCHAR *CaseName = NULL;
+	TSK_TCHAR *DriveName = NULL;
+	TSK_TCHAR *VolumeName = NULL;
 
+	int Timeline_num = 50;
 	int offset = -1;
 
+	/*    # 7가지 프로그램 실행 옵션 
+		-n : case명 입력 (입력받은 이름으로 폴더 생성)
+		-v : 분석할 논리 드라이브명 입력 ( @ 라이브시스템 분석 모드 )
+		-i : 현재 시스템의 이미지 디스크정보 출력 (독립사용)
+		-I : 이미지 분석모드로 디스크 이미지 경로 입력 (대문자 I)
+		-d : Deep Scan 모드 (추후 구현예정, 패턴비교 방식의 차이)
+		-h : 프로그램 Usage 출력
+		-o : offset 설정
+		-t : TIMELINE에서 뿌려줄 라인 수 지정 ( 미지정시 기본 값 50 )
+
+		ex)
+		라이브 분석)
+				    $ioaf.exe -n "Case123" -v "C:"
+
+		이미지 분석)
+					$ioaf.exe -i (디스크 정보 출력)
+					$ioaf.exe -n "case123" -I "c:\sample.dd" -v "C:"
+	*/
 	
-    while(-1 != (opt = GETOPT(argc, argv, _TSK_T("h:v:lo:d:n:"))))
+    //while(-1 != (opt = GETOPT(argc, argv, _TSK_T("h:v:lo:d:n:"))))
+	while ((opt = GETOPT(argc, argv, _TSK_T("n:v:i:I:dht:"))) != -1) 
 	{
 		switch(opt) 
 		{ 
 			case _TSK_T('h') :
 				usage(); 
 				break; 
+
 			case _TSK_T('i') :
-				DriveName=OPTARG;
+				DriveName = OPTARG;
+				//wcsncpy(DriveName, OPTARG, sizeof(OPTARG));
 				drive_info(DriveName);
-				//printf("im I\n");
 				break;
+
 			case _TSK_T('d') :
 				deepchk=1;
-				//printf("I'm D\n");
 				break;
+
 			case _TSK_T('n') :
 				CaseName = OPTARG;
-				//printf("I'm N\n");
+				//wcsncpy(CaseName, OPTARG, sizeof(OPTARG));
 				break;
+
 			case _TSK_T('o') : 
 				offset = _ttoi(OPTARG);
 				break;
+
 			case _TSK_T('I') : 
-				live=0;
+				live=0;  // 라이브모드 사용 안함 설정
+				ImagePath = OPTARG;
+				//wcsncpy(ImagePath, OPTARG, sizeof(OPTARG));
 				break;
+
+			case _TSK_T('v') : 
+				offset = _ttoi(OPTARG);
+				VolumeName = OPTARG;
+				//wcsncpy(VolumeName, OPTARG, sizeof(OPTARG));
+				break;
+
+			case _TSK_T('t') : 
+				Timeline_num = _ttoi(OPTARG);
+				break;
+
 			default : 
-				printf("Invalid Argument.\n");
+				printf("Invalid Argument(Default).\n");
 				usage();
 		}
 	}
+
 	if (CaseName == NULL){
 		printf("Invalid CaseName\n");
 		usage();
 
 	}
-	if ( live==1 && VolumeName != NULL && CaseName != NULL)
-	{
-		mft_live_module(VolumeName, CaseName);
-		reg_live_module(VolumeName,CaseName);
-
-	}
-	else if( live == 0 && ImagePath != NULL && offset != -1 && CaseName != NULL)
-	{
-		mft_image_module(ImagePath, CaseName);
-		reg_image_module(ImagePath, offset, CaseName);
-	}
 	else
 	{
-		printf("Invalid Argument.\n");
+		char* casename_char;
+		int len; 
+		len = WideCharToMultiByte(CP_ACP, 0, CaseName, -1, NULL, 0, NULL,NULL);
+		casename_char = new char[len];
+		WideCharToMultiByte(CP_ACP, 0, CaseName, -1, casename_char, len, NULL, NULL);
+
+		mkdir(casename_char);
+
+	}
+
+	if ( live == 1 && VolumeName != NULL && CaseName != NULL)
+	{
+		mft_live_module(VolumeName, CaseName);
+		//reg_live_module(VolumeName,CaseName);
+		printf("Mft_live Success\n");
+		ie_hist_module();
+
+	}
+
+	else if( live == 0 && ImagePath != NULL && CaseName != NULL)
+	//else if( live == 0 && ImagePath != NULL && offset != -1 && CaseName != NULL)
+	{
+		mft_image_module(ImagePath, CaseName);
+		//reg_image_module(ImagePath, offset, CaseName);
+		ie_hist_module();
+	}
+
+	else
+	{
+		printf("Invaild Operation Mode.\n");
 		usage();
 	}
 
+	/*
 	if ( deepchk == 1)
 		deepscan(CaseName);
 	else
 		scan(CaseName);
+		*/
 
+	printf("@@@@@@@@@@@@@@@@@@@@@@@@\n");
+	WCHAR path[100] = {0,};
+	wsprintf(path, L"..\/%s\/info.db", CaseName);
+	if(MoveFile(L"info.db", path) == NULL)
+		printf("MoveFile Failed!!!\n");
 
+	/*
+	WCHAR path2[100] = {0,};
+	wsprintf(path2, L"..\/%s\/match.db", CaseName);
+	MoveFile(L"match.db", path2);
+	*/
 }
 
 void usage()
@@ -284,4 +354,6 @@ int info_offset(TCHAR *drive)
 
 void drive_info(TCHAR * ImagePath)
 {
+
+	exit(1);
 }

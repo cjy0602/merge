@@ -21,7 +21,7 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
     sqlite3_stmt *stmt = NULL;
     char *sql;
     int rc;
-	char path[_MAX_PATH] = {0,};
+	char path[_MAX_PATH] = "info.db";
     int j;
     unsigned int i;
 
@@ -39,7 +39,7 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
     fprintf(stdout, "DB연결 완료.\n");
 	// case를 -n인자로 받은 폴더 명 수정 필요.
 
-	if(sqlite3_open(path, &db) != SQLITE_OK)
+	if(sqlite3_open("info.db", &db) != SQLITE_OK)
     //if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));

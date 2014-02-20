@@ -389,13 +389,13 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
  
     memset(buffer, 0x00, sizeof(char)*500); 
 
-    int error = sqlite3_open("match.db", &db);
+    int error = sqlite3_open("info.db", &db);
     if(error)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
     fprintf(stdout, "DB연결 완료.\n");
-    if(sqlite3_open("match.db", &db) != SQLITE_OK)
+    if(sqlite3_open("info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
@@ -475,13 +475,13 @@ int MOD2(struct history_download_saved  *his, DWORD dwURLCount)
  
     memset(buffer, 0x00, sizeof(char)*500); 
 
-    int error = sqlite3_open("match.db", &db);
+    int error = sqlite3_open("info.db", &db);
     if(error)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
     fprintf(stdout, "DB연결 완료.\n");
-    if(sqlite3_open("match.db", &db) != SQLITE_OK)
+    if(sqlite3_open("info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
@@ -576,6 +576,7 @@ int iehist(char* dat_name, int mode)
 	
 	int nType = 0;
 	
+	//printf("Dat name = %s\n", dat_name);
 
 	pFD = fopen(dat_name, "rb");
 

@@ -141,11 +141,11 @@ char getvolume(char **ppath)
    return volname;
 }
 
-int MFTtest(struct mftstruct  *u3, char *casename)
+int MFTtest_live(struct mftstruct  *u3, char *casename)
 {
     sqlite3 *db = NULL; 
     sqlite3_stmt *stmt = NULL; //sqlite3 statement 
-	char path[MAX_PATH] = {0,};
+	char path[MAX_PATH] = "info.db";
     char *sql; 
     int rc;
     unsigned int i;
@@ -164,7 +164,7 @@ int MFTtest(struct mftstruct  *u3, char *casename)
     fprintf(stdout, "DB연결 완료.\n");
 
 
-	if(sqlite3_open(path, &db) != SQLITE_OK)
+	if(sqlite3_open("info.db", &db) != SQLITE_OK)
     //if(sqlite3_open("./case/info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
@@ -181,7 +181,7 @@ int MFTtest(struct mftstruct  *u3, char *casename)
     char* errorMsg = NULL;
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg);
     fprintf(stderr, " Commit begin result : %s\n", errorMsg);
-   sprintf (buffer,"INSERT INTO MFT(FILENAME, FULLPATH, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)");
+    sprintf (buffer,"INSERT INTO MFT(FILENAME, FULLPATH, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)");
     //sprintf (buffer,"INSERT INTO MFT(FILENAME, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)", , , , u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i].);
 
     if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK)
@@ -226,9 +226,7 @@ int MFTtest(struct mftstruct  *u3, char *casename)
     sqlite3_finalize(stmt);
 
     sqlite3_close(db);
-    for(i=0; i<165000;i++){
-        //printf("%s, %u, %u, %u, %u, %u, %u, %u, %u, %u, %u\n", u3[i].FILENAME, u3[i].entry, u3[i].ParentRef, u3[i].SI_writeTm, u3[i].SI_createTm, u3[i].SI_accessTm, u3[i].SI_mftTm, u3[i].FN_writeTm, u3[i].FN_createTm, u3[i].FN_accessTm, u3[i].FN_mftTm);
-    }
+    
     return 0;
  }
 
@@ -424,7 +422,7 @@ int mft_live(char *path, char *casename)
    //printf("\n##### 전체 소요시간 : %5.2f초 #####\n", (float)(end-start)/CLOCKS_PER_SEC);
    //printf("Files: %d, Directories: %d\n", totalfiles, totaldirs);
 
-   MFTtest(u3, casename);
+   MFTtest_live(u3, casename);
 
    free(u3);
    return 0;
