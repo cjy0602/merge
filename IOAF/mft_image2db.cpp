@@ -28,10 +28,10 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
     char *buffer = (char *)malloc(500);
     memset(buffer, 0x00, sizeof(char)*500);
 
-	sprintf(path, ".\/%s\/info.db", case_name);
+	//sprintf(path, ".\/%s\/info.db", case_name);
 
     //int error = sqlite3_open("./case/info.db", &db);
-	int error = sqlite3_open(path, &db);
+	int error = sqlite3_open("info.db", &db);
     if(error)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));

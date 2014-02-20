@@ -30,20 +30,19 @@ void mft_image_module(TCHAR * ImagePath, TCHAR * CaseName)
 	ctmp = new char[len];
 	WideCharToMultiByte(CP_ACP, 0, CaseName, -1, ctmp, len, NULL, NULL);
 
-	char case_path[MAX_PATH] = {0,};
-	sprintf(case_path, ".\/%s\/image.mft", ctmp);
+	//char case_path[MAX_PATH] = {0,};
+	//sprintf(case_path, ".\/%s\/image.mft", ctmp);
 
-
-	if (freopen(case_path, "w", stdout) == NULL)
+	if (freopen("image.mft", "w", stdout) == NULL)
 			fprintf(stderr, "error redirecting stdout\n");
 	mft_image(ImagePath);
 	fclose (stdout);
 	freopen("CON", "w", stdout);
 	//printf("image.mft 생성 완료\n");
 
-	mft_image2db(case_path, ctmp);
+	mft_image2db("image.mft", ctmp);
 	
-	if ( remove(case_path) == -1 )
+	if ( remove("image.mft") == -1 )
 		perror ( "Could not delete image.mft file\n");
 
 }
