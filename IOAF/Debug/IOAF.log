@@ -1,49 +1,15 @@
-﻿빌드 시작: 2014-02-20 오후 3:18:58
+﻿빌드 시작: 2014-02-20 오후 3:34:28
      1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\include\include /I"C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib" /IC:\Users\eunjin\Desktop\IOAF2\sqlite /IC:\Users\eunjin\Desktop\IOAF2\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt iehist.cpp main.cpp mft_image.cpp mft_image2db.cpp mft_live.cpp module.cpp
-         iehist.cpp
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(150): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(104): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(303): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(314): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(345): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(365): warning C4101: 't' :참조되지 않은 지역 변수입니다.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(429): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(517): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(580): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(654): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(674): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(682): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(690): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(698): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-         코드를 생성하고 있습니다...
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(768): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
-         컴파일하고 있습니다...
          module.cpp
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(36): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(45): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(40): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(49): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(79): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(88): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 11.0\vc\include\wchar.h(784) : '_swprintf' 선언을 참조하십시오.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(131): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\module.cpp(140): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 11.0\vc\include\wchar.h(784) : '_swprintf' 선언을 참조하십시오.
          mft_live.cpp
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_live.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
@@ -104,7 +70,39 @@
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(215): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(213): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(206): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+         iehist.cpp
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(150): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(104): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(303): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(314): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(345): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(365): warning C4101: 't' :참조되지 않은 지역 변수입니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(429): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(517): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(580): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(654): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(674): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(682): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(690): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(698): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
          코드를 생성하고 있습니다...
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(768): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_image.cpp(156): warning C4715: 'mft_image' : 모든 제어 경로에서 값을 반환하지는 않습니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_live.cpp(63): warning C4715: 'getFullPath' : 모든 제어 경로에서 값을 반환하지는 않습니다.
        Link:
@@ -193,4 +191,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:12.40
+경과 시간: 00:00:12.65

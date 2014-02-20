@@ -4,6 +4,15 @@
 #include "parser.h"
 #include "exreg.h"
 
+void ie_hist_module()
+{
+	iehist("index_history.dat", 1);
+	iehist("index_cache.dat", 1);
+	iehist("index_cookie.dat", 1);
+	iehist("index_download.dat", 2);
+}
+
+
 void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 {
 	char* ctmp;
