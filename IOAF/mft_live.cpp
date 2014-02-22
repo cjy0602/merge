@@ -156,11 +156,6 @@ int MFTtest_live(struct mftstruct  *u3, char *casename)
 	//sprintf(path, ".\/%s\/info.db", casename);
 
     //int error = sqlite3_open("./case/info.db", &db);
-	int error = sqlite3_open("info.db", &db);
-    if(error)
-    {
-        fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
-    }
    // fprintf(stdout, "DB연결 완료.\n");
 
 
@@ -171,7 +166,7 @@ int MFTtest_live(struct mftstruct  *u3, char *casename)
     }
 
     //MFT 테이블 생성
-    sql = "CREATE TABLE IF NOT EXISTS MFT (FILENAME TEXT, FULLPATH TEXT, entry INT, ParentRef INT, Sl_writeTm INT, SI_createTm INT, SI_accessTm INT, SI_mftTm INT, FN_writeTm INT, FN_createTm INT, FN_accessTm INT, FN_mftTm INT);";
+    sql = "CREATE TABLE IF NOT EXISTS MFT (FILENAME TEXT, FULLPATH TEXT, entry INT, ParentRef INT, Sl_writeTm INT, SI_createTm INT, SI_accessTm INT, SI_mftTm INT, FN_writeTm INT, FN_createTm INT, FN_accessTm INT, FN_mftTm INT, TYPE TEXT);";
     if( sqlite3_exec(db, sql, NULL, NULL, NULL) == SQLITE_OK) {
        // fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
     } else {
@@ -181,7 +176,7 @@ int MFTtest_live(struct mftstruct  *u3, char *casename)
     char* errorMsg = NULL;
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg);
     //fprintf(stderr, " Commit begin result : %s\n", errorMsg);
-    sprintf (buffer,"INSERT INTO MFT(FILENAME, FULLPATH, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)");
+    sprintf (buffer,"INSERT INTO MFT(FILENAME, FULLPATH, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm, TYPE) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12, \"FILE\")");
     //sprintf (buffer,"INSERT INTO MFT(FILENAME, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)", , , , u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i].);
 
     if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK)

@@ -68,3 +68,4 @@ void Deep_matching_REG(SIGREGQ *q, MATCHREGQ *mq);
 void Deep_matching_FILE(SIGFILEQ *q, MATCHFILEQ *mq);
 void REG2SQL(MATCHREGQ * mq);
 void FILE2SQL(MATCHFILEQ * mq);
+void tool_info();

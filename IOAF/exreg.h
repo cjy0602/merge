@@ -16,6 +16,7 @@ static TSK_WALK_RET_ENUM
     char *buf, size_t size, TSK_FS_BLOCK_FLAG_ENUM flags, void *ptr);
 
 void ntuser_hive(TSK_FS_INFO *fs);
+
 TSK_WALK_RET_ENUM callback(TSK_FS_FILE * fs_file, const char* path, void * ptr);
 
 void ie_file(TSK_FS_INFO *fs);

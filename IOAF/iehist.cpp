@@ -388,13 +388,6 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
     char *buffer = (char *)malloc(500);  
  
     memset(buffer, 0x00, sizeof(char)*500); 
-
-    int error = sqlite3_open("info.db", &db);
-    if(error)
-    {
-        fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
-    }
-   // fprintf(stdout, "DB연결 완료.\n");
     if(sqlite3_open("info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
@@ -403,7 +396,7 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
     //MFT 테이블 생성
     sql = "CREATE TABLE IF NOT EXISTS HISTORY (URL TEXT, TYPE INT, TIME INT);";
     if( sqlite3_exec(db, sql, NULL, NULL, NULL) == SQLITE_OK) { 
-        fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
+        //fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
     } else {
         puts("테이블 생성에 실패했습니다.");
         exit(1);
@@ -425,13 +418,13 @@ int MOD1(struct history_saved  *his, DWORD dwURLCount)
     //데이터 추가 코드.
     char* errorMsg = NULL;
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit begin result : %s\n", errorMsg);
+    //fprintf(stderr, " Commit begin result : %s\n", errorMsg);
     sprintf (buffer,"INSERT INTO HISTORY(URL, TYPE, TIME) VALUES ( ?1, ?2, ?3)");
     //sprintf (buffer,"INSERT INTO MFT(FILENAME, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)", , , , u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i].);
 
     if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK)
     {
-        puts(">> Prepared Statement is ready : Succeeded!\n");
+        //puts(">> Prepared Statement is ready : Succeeded!\n");
     }
     else
     {
@@ -475,12 +468,6 @@ int MOD2(struct history_download_saved  *his, DWORD dwURLCount)
  
     memset(buffer, 0x00, sizeof(char)*500); 
 
-    int error = sqlite3_open("info.db", &db);
-    if(error)
-    {
-        fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
-    }
-    fprintf(stdout, "DB연결 완료.\n");
     if(sqlite3_open("info.db", &db) != SQLITE_OK)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
@@ -513,7 +500,7 @@ int MOD2(struct history_download_saved  *his, DWORD dwURLCount)
     //데이터 추가 코드.
     char* errorMsg = NULL;
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit begin result : %s\n", errorMsg);
+    //fprintf(stderr, " Commit begin result : %s\n", errorMsg);
     sprintf (buffer,"INSERT INTO DOWNLOAD(URL, TYPE, TIME, Referer, DownloadURL, Location) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6)");
     //sprintf (buffer,"INSERT INTO MFT(FILENAME, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)", , , , u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i].);
 

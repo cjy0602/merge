@@ -121,7 +121,7 @@ void chkKey(char *full, long long time, REGQUEUE *q)
 		push(q, tmp, time);
 	}
 	else {
-		push(q, tmp, time);
+		push(q, full, time);
 		return;
 		
 	}
@@ -145,7 +145,7 @@ void chkKey_nt(char *full, long long time, REGQUEUE *q, char * name)
 		push(q, tmp, time);
 	}
 	else {
-		push(q, tmp, time);
+		push(q, full, time);
 	}
 
 }

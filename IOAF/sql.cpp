@@ -20,7 +20,7 @@ int reg2sql(REGQUEUE *q)
     }
 
     //MFT 테이블 생성
-    sql = "CREATE TABLE IF NOT EXISTS Registry (PATH TEXT ,TIME INTEGER);";
+    sql = "CREATE TABLE IF NOT EXISTS Registry (PATH TEXT ,TIME INTEGER, TYPE TEXT);";
     if( sqlite3_exec(db, sql, NULL, NULL, NULL) == SQLITE_OK) { //멘토님께서 디버깅 편하시려고 수정해주신 부분. 연결되면 콘솔에 succeeded 출력됨.
         //fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
     } else {
@@ -31,7 +31,7 @@ int reg2sql(REGQUEUE *q)
     //데이터 추가 코드.
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg); //insert 속도 개선 위해 사용한 코드. insert문 끝날 때 끝내는 문장도 있음.
     //fprintf(stderr, " Commit begin result : %s\n", errorMsg); //디버깅 편하게 하기 위해 콘솔에 출력해주는 부분. 나중에는 지워도 될듯
-	sprintf (buffer,"INSERT INTO Registry(PATH, TIME) VALUES ( ?1, ?2)");
+	sprintf (buffer,"INSERT INTO Registry(PATH, TIME, TYPE) VALUES ( ?1, ?2, \"Registry\")");
   //buffer라는 변수에 insert 쿼리문을 넣는 것. 쿼리문에 변수에 맞게 넣고. values에 넣으면됨. 1,2,3,4,5,6~~ 숫자는 아래 sqlite3_bind_text stmt, 숫자부분을 바꿔주면 됨. 숫자다음은 저장되있는 변수값들)
     if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK) //디버깅 확인 위한 if문
     {

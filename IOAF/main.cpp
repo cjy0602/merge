@@ -175,7 +175,7 @@ void _tmain(int argc, TSK_TCHAR **argv)
 		}
 
 	}
-
+	
 	//else if( live == 0 && ImagePath != NULL && CaseName != NULL)
 	else if( live == 0 && ImagePath != NULL && offset != -1 && CaseName != NULL)
 	{

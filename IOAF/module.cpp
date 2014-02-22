@@ -230,6 +230,7 @@ void deepscan(TCHAR * CaseName)
 	Deep_matching_FILE(&fq, &mfq);
 	REG2SQL(&mq);
 	FILE2SQL(&mfq);
+	tool_info();
 }
 void scan(TCHAR * CaseName)
 {
@@ -244,4 +245,5 @@ void scan(TCHAR * CaseName)
 	matching_FILE(&fq, &mfq);
 	REG2SQL(&mq);
 	FILE2SQL(&mfq);
+	tool_info();
 }
