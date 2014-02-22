@@ -36,7 +36,7 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
     {
         fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
     }
-    fprintf(stdout, "DB연결 완료.\n");
+    //fprintf(stdout, "DB연결 완료.\n");
 	// case를 -n인자로 받은 폴더 명 수정 필요.
 
 	if(sqlite3_open("info.db", &db) != SQLITE_OK)
@@ -49,7 +49,7 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
     //sql = "CREATE TABLE IF NOT EXISTS MFT (FULLPATH TEXT ,AccessTm INT, ModifiedTm INT, ChangeTm INT, CreatedTm INT);";
     sql = "CREATE TABLE IF NOT EXISTS MFT (FULLPATH TEXT , FN_AccessTm INT, FN_ModifiedTm INT, FN_ChangeTm INT, FN_CreatedTm INT, SI_AccessTm INT, SI_ModifiedTm INT, SI_ChangeTm INT, SI_CreatedTm INT);";
 	if( sqlite3_exec(db, sql, NULL, NULL, NULL) == SQLITE_OK) {
-        fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
+        //fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
     } else {
         puts("테이블 생성에 실패했습니다.");
         exit(1);
@@ -87,7 +87,7 @@ int MFTtest(struct MFT  *u3, int countresult, char* case_name)
         sqlite3_reset(stmt);
     }
     rc = sqlite3_exec(db, "COMMIT TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit result : %s\n", errorMsg);
+    //fprintf(stderr, " Commit result : %s\n", errorMsg);
     sqlite3_finalize(stmt);
 
     sqlite3_close(db);

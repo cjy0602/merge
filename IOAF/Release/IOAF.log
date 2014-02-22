@@ -1,6 +1,25 @@
-﻿빌드 시작: 2014-02-22 오후 1:30:20
+﻿빌드 시작: 2014-02-22 오후 8:03:03
      1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\include\include /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>main.cpp(127): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
+     1>main.cpp(135): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(140): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(145): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(183): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(257): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(263): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(264): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(265): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(371): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(369): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(362): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.lib" /MACHINE:X86 /SAFESEH Release\exreg.obj
          Release\iehist.obj
          Release\match.obj
@@ -29,4 +48,4 @@
 
 빌드하지 못했습니다.
 
-경과 시간: 00:00:00.55
+경과 시간: 00:00:03.27

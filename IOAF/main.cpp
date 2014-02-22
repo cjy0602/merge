@@ -23,6 +23,8 @@ void drive_info_live(void);
 
 void _tmain(int argc, TSK_TCHAR **argv)
 {
+	system("mode con:cols=110 lines=50");
+
 	int opt=0;
 	int deepchk=0;
 	int live=1;
@@ -41,7 +43,6 @@ void _tmain(int argc, TSK_TCHAR **argv)
 		Live Analysis Mode:
 
 			C:\>IOAF.exe -n "case_name" -v "Volume_name" 
-	
 			ex) IOAF.exe -n "Case123" -v "C:"
 
 
@@ -132,6 +133,21 @@ void _tmain(int argc, TSK_TCHAR **argv)
 	}
 
 
+	if( access("info.db", 0) == NULL){
+		if ( remove("info.db") == -1 )
+			perror ( "Could not delete info.db\n");
+	}
+
+	if( access("image.mft", 0) == NULL){
+		if ( remove("image.mft") == -1)
+			perror ( "Could not delete image.mft\n");
+	}
+
+	if( access("tmp",0)== NULL){
+		if ( remove("tmp") == -1 )
+			perror ( "Could not delete tmp file\n");
+	}
+
 	//////////////////// 분석 기능 작동 .
 
 	if ( live == 1 && VolumeName != NULL && CaseName != NULL)
@@ -193,17 +209,16 @@ void _tmain(int argc, TSK_TCHAR **argv)
 		scan(CaseName);
 	
 
-	printf("@@@@@@@@@@@@@@@@@@@@@@@@\n");
-	WCHAR path[100] = {0,};
-	wsprintf(path, L"..\\%s\\info.db", CaseName);
-	if(!MoveFile(L".\\info.db", path))
-		printf("MoveFile Failed!!!\n");
+	// CaseName 폴더로 파일들 이동!..
 
-	/*
-	WCHAR path2[100] = {0,};
-	wsprintf(path2, L"..\/%s\/match.db", CaseName);
-	MoveFile(L"match.db", path2);
-	*/
+    char *buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+
+	sprintf(buffer, "move info.db %s", casename_char);
+	system(buffer);
+
+	free(buffer);
+
 }
 
 void usage()
@@ -226,7 +241,7 @@ void usage()
 	printf("      eeeeeeeeee         eeeeeG    ,eeez    ee             eeeeeeeeeeee  eeeeeeeeeee                \n");
 	printf("      9       y              9eeeeeDK   yX 9           e   W                   E   K                \n");
 	printf("     eeKe e e e e e9 W,eyee e  e,  ee  Xe   ee  e e eDee  ee  eu ee eue9e e e  e e                  \n");
-	printf("     eDee9eue e e e  e,e eDGe We   ee  ee ,5 eeee e e eG  ee  e  ee e  eeze eeeeee       BOB 2nd    \n");
+	printf("     eDee9eue e e e  e,e eDGe We   ee  ee ,5 eeee e e eG  ee  e  ee e  eez    BOB 2nd Contest stage \n");
 	printf("\n\n");
 	printf("====================================================================================================\n");
 	
@@ -250,6 +265,7 @@ void usage()
 	printf("	    IOAF.exe -n \"Case123\" -i \"C:\sample.dd\" -o \"2048\"\n\n");
 
 	printf("====================================================================================================\n");
+	
 	exit(0);
 }
 

@@ -173,14 +173,14 @@ int MFTtest_live(struct mftstruct  *u3, char *casename)
     //MFT 테이블 생성
     sql = "CREATE TABLE IF NOT EXISTS MFT (FILENAME TEXT, FULLPATH TEXT, entry INT, ParentRef INT, Sl_writeTm INT, SI_createTm INT, SI_accessTm INT, SI_mftTm INT, FN_writeTm INT, FN_createTm INT, FN_accessTm INT, FN_mftTm INT);";
     if( sqlite3_exec(db, sql, NULL, NULL, NULL) == SQLITE_OK) {
-        fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
+       // fprintf(stderr, ">> SQLite Table creation Succeeded!\n");
     } else {
         puts("테이블 생성에 실패했습니다.");
         exit(1);
     }
     char* errorMsg = NULL;
     rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg);
-    fprintf(stderr, " Commit begin result : %s\n", errorMsg);
+    //fprintf(stderr, " Commit begin result : %s\n", errorMsg);
     sprintf (buffer,"INSERT INTO MFT(FILENAME, FULLPATH, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)");
     //sprintf (buffer,"INSERT INTO MFT(FILENAME, entry, ParentRef, Sl_writeTm, SI_createTm, SI_accessTm, SI_mftTm, FN_writeTm, FN_createTm, FN_accessTm, FN_mftTm) VALUES ( ?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)", , , , u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i]., u3[i].);
 
