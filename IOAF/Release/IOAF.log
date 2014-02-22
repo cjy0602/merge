@@ -1,26 +1,80 @@
-﻿빌드 시작: 2014-02-22 오후 8:03:03
+﻿빌드 시작: 2014-02-22 오후 9:45:09
      1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\include\include /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\include\include /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp mft_image2db.cpp mft_live.cpp
          main.cpp
-     1>main.cpp(127): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+     1>main.cpp(128): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
-     1>main.cpp(135): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+     1>main.cpp(136): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(140): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+     1>main.cpp(141): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(145): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+     1>main.cpp(146): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(183): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(217): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(184): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
      1>main.cpp(257): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
      1>main.cpp(263): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
      1>main.cpp(264): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
      1>main.cpp(265): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>main.cpp(371): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
-     1>main.cpp(369): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
-     1>main.cpp(362): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(372): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(370): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(363): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+         mft_image2db.cpp
+     1>mft_image2db.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>mft_image2db.cpp(73): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_image2db.cpp(25): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+     1>mft_image2db.cpp(115): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>mft_image2db.cpp(128): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(147): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(156): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(161): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>mft_image2db.cpp(171): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+         mft_live.cpp
+     1>mft_live.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(160): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 'wcsncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(788): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 'wcsncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(904): warning C4244: 'return' : 'const ULONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(954): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 'wcsncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(1101): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(317) : 'wcsncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(1111): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_FileRecord.h(899): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(474) : '_snwprintf' 선언을 참조하십시오.
+     1>mft_live.cpp(57): warning C4244: '인수' : 'ULONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>mft_live.cpp(57): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
+     1>mft_live.cpp(58): warning C4129: '/' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>mft_live.cpp(59): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
+     1>mft_live.cpp(61): warning C4172: 지역 변수 또는 임시 변수의 주소를 반환하고 있습니다.
+     1>mft_live.cpp(68): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_live.cpp(184): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>mft_live.cpp(256): warning C4244: '=' : 'ULONGLONG'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>mft_live.cpp(311): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_live.cpp(359): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>mft_live.cpp(412): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_live.cpp(415): warning C4129: '/' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>mft_live.cpp(415): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
+     1>mft_live.cpp(416): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.lib" /MACHINE:X86 /SAFESEH Release\exreg.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-release" /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.lib" /MACHINE:X86 /SAFESEH Release\exreg.obj
          Release\iehist.obj
          Release\match.obj
          Release\mft_live.obj
@@ -33,19 +87,76 @@
          Release\registry.obj
          Release\sql.obj
          Release\utc.obj
-     1>libtsk.lib(fs_file.obj) : warning LNK4075: '/EDITANDCONTINUE'이(가) '/OPT:ICF' 사양으로 인해 무시됩니다.
-     1>libtsk.lib(auto.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(auto.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(fatfs_dent.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(fatfs_dent.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(yaffs.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(yaffs.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(ntfs_dent.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>libtsk.lib(ntfs_dent.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
-     1>LINK : warning LNK4098: 'MSVCRTD' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
-     1>C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe : fatal error LNK1319: 8개의 불일치가 검색되었습니다.
-     1>"C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+         코드를 생성하고 있습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_live.cpp(63): warning C4715: 'getFullPath' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(769): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_image.cpp(156): warning C4715: 'mft_image' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+         코드를 생성했습니다.
+     1>sqlite3.lib(sqlite3.obj) : warning LNK4099: 'vc110.pdb' PDB를 'sqlite3.lib(sqlite3.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_file.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_file.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_dir.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_dir.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ifind_lib.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ifind_lib.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_error.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_error.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(img_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(img_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_types.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_types.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_types.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_types.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(XGetopt.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(XGetopt.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_printf.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_printf.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_part.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_part.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(auto.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(auto.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fls_lib.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fls_lib.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_attrlist.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_attrlist.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_attr.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_attr.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(md5c.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(md5c.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mymalloc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mymalloc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(sha1c.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(sha1c.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_name.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_name.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_inode.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_inode.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_stack.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_stack.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_lock.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_lock.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_list.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_list.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_unicode.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_unicode.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_block.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_block.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_error_win32.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_error_win32.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ewf.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ewf.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(raw.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(raw.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(iso9660.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(iso9660.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(yaffs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(yaffs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ntfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ntfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(swapfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(swapfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ffs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ffs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(rawfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(rawfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(bsd.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(bsd.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(dos.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(dos.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(sun.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(sun.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(gpt.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(gpt.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mac.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mac.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs_meta.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs_meta.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(img_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(img_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mult_files.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mult_files.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_endian.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_endian.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(iso9660_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(iso9660_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(unix_misc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(unix_misc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs_journal.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs_journal.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_journal.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_journal.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_unicompare.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_unicompare.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ntfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ntfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_load.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_load.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(nofs_misc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(nofs_misc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ffs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ffs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+         IOAF.vcxproj -> C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe
+     1>"C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
-빌드하지 못했습니다.
+빌드했습니다.
 
-경과 시간: 00:00:03.27
+경과 시간: 00:00:11.52
