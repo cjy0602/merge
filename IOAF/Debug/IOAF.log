@@ -1,31 +1,103 @@
-﻿빌드 시작: 2014-02-21 오전 2:21:52
-2 노드의 "C:\Users\eunjin\Documents\merge4\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
-ClCompile:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\include\include /I"C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib" /IC:\Users\eunjin\Desktop\IOAF2\sqlite /IC:\Users\eunjin\Desktop\IOAF2\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-  main.cpp
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(118): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(150): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(297): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(295): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(288): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
-Link:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:C:\Users\eunjin\Desktop\IOAF2\sqlite /LIBPATH:"C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.lib" /MACHINE:X86 Debug\exreg.obj
-  Debug\iehist.obj
-  Debug\match.obj
-  Debug\mft_live.obj
-  Debug\module.obj
-  Debug\main.obj
-  Debug\mft_image.obj
-  Debug\mft_image2db.obj
-  Debug\parser.obj
-  Debug\queue.obj
-  Debug\registry.obj
-  Debug\sql.obj
-  Debug\utc.obj
-  IOAF.vcxproj -> C:\Users\eunjin\Documents\merge4\Debug\IOAF.exe
-"C:\Users\eunjin\Documents\merge4\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+﻿빌드 시작: 2014-02-22 오후 5:53:51
+     1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\include\include /I"C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib" /IC:\Users\eunjin\Desktop\IOAF2\sqlite /IC:\Users\eunjin\Desktop\IOAF2\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(127): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(168): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(242): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(248): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(249): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(250): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(356): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(354): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\main.cpp(347): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Debug\IOAF.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:C:\Users\eunjin\Desktop\IOAF2\sqlite /LIBPATH:"C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Debug\IOAF.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Debug\IOAF.lib" /MACHINE:X86 Debug\exreg.obj
+         Debug\iehist.obj
+         Debug\match.obj
+         Debug\mft_live.obj
+         Debug\module.obj
+         Debug\main.obj
+         Debug\mft_image.obj
+         Debug\mft_image2db.obj
+         Debug\parser.obj
+         Debug\queue.obj
+         Debug\registry.obj
+         Debug\sql.obj
+         Debug\utc.obj
+         sqlite3.lib(sqlite3.obj) : /GL로 컴파일한 MSIL .netmodule 또는 모듈이 있습니다. /LTCG를 지정하여 링크를 다시 시작하십시오. /LTCG를 링크 명령줄에 추가하면 링커 성능이 향상됩니다.
+     1>LINK : warning LNK4075: '/INCREMENTAL'이(가) '/LTCG' 사양으로 인해 무시됩니다.
+     1>exreg.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/OPT:LBR' 사양으로 인해 무시됩니다.
+     1>LINK : warning LNK4098: 'MSVCRT' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+     1>sqlite3.lib(sqlite3.obj) : warning LNK4099: 'vc110.pdb' PDB를 'sqlite3.lib(sqlite3.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(bsd.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(bsd.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(dos.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(dos.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(gpt.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(gpt.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mac.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mac.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_part.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_part.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mm_types.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mm_types.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(sun.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(sun.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ext2fs_journal.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ext2fs_journal.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fatfs_meta.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fatfs_meta.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ffs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ffs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ffs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ffs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fls_lib.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fls_lib.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_attr.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_attr.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_attrlist.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_attrlist.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_block.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_block.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_dir.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_dir.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_file.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_file.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_inode.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_inode.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_load.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_load.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_name.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_name.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(fs_types.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_types.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_journal.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_journal.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(hfs_unicompare.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(hfs_unicompare.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ifind_lib.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ifind_lib.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(iso9660.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(iso9660.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(iso9660_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(iso9660_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(nofs_misc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(nofs_misc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ntfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ntfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ntfs_dent.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ntfs_dent.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(rawfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(rawfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(swapfs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(swapfs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(unix_misc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(unix_misc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(yaffs.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(yaffs.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(auto.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(auto.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(md5c.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(md5c.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mymalloc.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mymalloc.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(sha1c.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(sha1c.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_endian.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_endian.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_error.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_error.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_error_win32.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_error_win32.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_list.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_list.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_lock.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_lock.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_printf.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_printf.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_stack.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_stack.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(tsk_unicode.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(tsk_unicode.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(XGetopt.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(XGetopt.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(ewf.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(ewf.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(img_io.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(img_io.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(img_open.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(img_open.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(mult_files.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(mult_files.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+     1>libtsk.lib(raw.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(raw.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Debug\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+         IOAF.vcxproj -> C:\Users\cjy\Desktop\merge-master\merge-master\Debug\IOAF.exe
+     1>"C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:05.14
+경과 시간: 00:00:08.61

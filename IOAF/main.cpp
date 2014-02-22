@@ -19,6 +19,7 @@ static TSK_WALK_RET_ENUM part_act(TSK_VS_INFO * vs, const TSK_VS_PART_INFO * par
 int info_offset(TCHAR *drive);
 void usage();
 void drive_info(TCHAR *drive);
+void drive_info_live(void);
 
 void _tmain(int argc, TSK_TCHAR **argv)
 {
@@ -33,67 +34,80 @@ void _tmain(int argc, TSK_TCHAR **argv)
 	int Timeline_num = 50;
 	int offset = -1;
 
-	/*    # 7가지 프로그램 실행 옵션 
-	-n : case명 입력 (입력받은 이름으로 폴더 생성)
-	-v : 분석할 논리 드라이브명 입력 ( @ 라이브시스템 분석 모드 )
-	-i : 현재 시스템의 이미지 디스크정보 출력 (독립사용)
-	-I : 이미지 분석모드로 디스크 이미지 경로 입력 (대문자 I)
-	-d : Deep Scan 모드 (추후 구현예정, 패턴비교 방식의 차이)
-	-h : 프로그램 Usage 출력
-	-o : offset 설정
-	-t : TIMELINE에서 뿌려줄 라인 수 지정 ( 미지정시 기본 값 50 )
+	int set_offset = 0;
 
-	ex)
-	라이브 분석)
-	$ioaf.exe -n "Case123" -v "C"
 
-	이미지 분석)
-	$ioaf.exe -i (디스크 정보 출력)
-	$ioaf.exe -n "case123" -I "c:\sample.dd" -o 2048
+	/*   
+		Live Analysis Mode:
+
+			C:\>IOAF.exe -n "case_name" -v "Volume_name" 
+	
+			ex) IOAF.exe -n "Case123" -v "C:"
+
+
+		Image Analysis Mode:
+
+			C:\>IOAF.exe -n "case_name" -i "Disk Image Path" -v "C:" -o "Offset" 
+	
+			ex) IOAF.exe -n "Case123" -i "C:\saple.dd" 
+				IOAF.exe -n "Case123" -i "C:\sample.dd" -o "0204"
+
+
+		options:
+			-n : Case Name 입력              (*Default : Computer Name )
+			-v : 라이브모드 분석할 논리 드라이브명 입력 
+			-i : 디스크 이미지 경로 입력
+			-d : Deep Scan 모드           
+			-o : 디스크 이미지 Offset 설정		 (-i 옵션만 사용 시 Offset정보 확인 가능)			
+			-t : TIMELINE 로그 갯수 지정	 (*Default : 50 )
 	*/
 
+    if(argc < 2){
+		usage();
+        exit(0);
+    }
+
+
+	TCHAR computerName[MAX_COMPUTERNAME_LENGTH + 1];
+	DWORD size = sizeof(computerName) / sizeof(computerName[0]);
+	GetComputerName(computerName, &size);
+
+	CaseName = computerName;
+
 	//while(-1 != (opt = GETOPT(argc, argv, _TSK_T("h:v:lo:d:n:"))))
-	while ((opt = GETOPT(argc, argv, _TSK_T("n:v:i:I:d:h:t:"))) != -1) 
+	while ((opt = GETOPT(argc, argv, _TSK_T("n:v:i:o:d:t:l"))) != -1) 
 	{
 		switch(opt) 
 		{ 
-		case _TSK_T('h') :
-			usage(); 
-			break; 
-
-		case _TSK_T('i') :
-			DriveName = OPTARG;
-			//wcsncpy(DriveName, OPTARG, sizeof(OPTARG));
-			drive_info(DriveName);
-			break;
-
-		case _TSK_T('d') :
-			deepchk=1;
-			break;
 
 		case _TSK_T('n') :
 			CaseName = OPTARG;
-			//wcsncpy(CaseName, OPTARG, sizeof(OPTARG));
 			break;
 
-		case _TSK_T('o') : 
-			offset = _ttoi(OPTARG);
-			break;
-
-		case _TSK_T('I') : 
-			live=0;  // 라이브모드 사용 안함 설정
-			ImagePath = OPTARG;
-			//wcsncpy(ImagePath, OPTARG, sizeof(OPTARG));
-			break;
-
-		case _TSK_T('v') : 
-			offset = _ttoi(OPTARG);
+		case _TSK_T('v') :	// 라이브 분석 옵션
 			VolumeName = OPTARG;
-			//wcsncpy(VolumeName, OPTARG, sizeof(OPTARG));
+			break;
+
+		case _TSK_T('i') :	// 디스크 이미지 분석 옵션
+			live = 0;  // 라이브모드 사용 안함 설정
+			ImagePath = OPTARG;
+			break;
+
+		case _TSK_T('o') :	// 디스크 이미지 분석 옵션
+			set_offset = 1;
+			offset = _ttoi(OPTARG);
+			break;
+
+		case _TSK_T('d') :
+			deepchk = 1;
 			break;
 
 		case _TSK_T('t') : 
 			Timeline_num = _ttoi(OPTARG);
+			break;
+
+		case _TSK_T('l') :
+			drive_info_live();
 			break;
 
 		default : 
@@ -102,25 +116,27 @@ void _tmain(int argc, TSK_TCHAR **argv)
 		}
 	}
 
-	if (DriveName==NULL && CaseName == NULL){
-		printf("Invalid CaseName\n");
-		usage();
+	/////////////////////////  옵션 예외처리 작업 부분.
+	
+	char* casename_char;
+	int len; 
+	len = WideCharToMultiByte(CP_ACP, 0, CaseName, -1, NULL, 0, NULL,NULL);
+	casename_char = new char[len];
+	WideCharToMultiByte(CP_ACP, 0, CaseName, -1, casename_char, len, NULL, NULL);
 
-	}
-	else
+	mkdir(casename_char);
+
+	if(live == 0 && set_offset == 0)	// -i 옵션만 사용 시 디스크 이미지 정보 출력.
 	{
-		char* casename_char;
-		int len; 
-		len = WideCharToMultiByte(CP_ACP, 0, CaseName, -1, NULL, 0, NULL,NULL);
-		casename_char = new char[len];
-		WideCharToMultiByte(CP_ACP, 0, CaseName, -1, casename_char, len, NULL, NULL);
-
-		mkdir(casename_char);
-
+		drive_info(ImagePath);
 	}
+
+
+	//////////////////// 분석 기능 작동 .
 
 	if ( live == 1 && VolumeName != NULL && CaseName != NULL)
 	{
+		system("cls");
 		TCHAR tmp[0x100];
 		TSK_IMG_INFO *img;
 		TSK_FS_INFO *fs;
@@ -144,9 +160,11 @@ void _tmain(int argc, TSK_TCHAR **argv)
 
 	}
 
-	else if( live == 0 && ImagePath != NULL && CaseName != NULL)
-		//else if( live == 0 && ImagePath != NULL && offset != -1 && CaseName != NULL)
+	//else if( live == 0 && ImagePath != NULL && CaseName != NULL)
+	else if( live == 0 && ImagePath != NULL && offset != -1 && CaseName != NULL)
 	{
+		system("cls");
+		
 		TCHAR tmp[0x100];
 		TSK_IMG_INFO * img;
 		TSK_FS_INFO * fs;
@@ -170,9 +188,9 @@ void _tmain(int argc, TSK_TCHAR **argv)
 
 	
 	if ( deepchk == 1)
-	deepscan(CaseName);
+		deepscan(CaseName);
 	else
-	scan(CaseName);
+		scan(CaseName);
 	
 
 	printf("@@@@@@@@@@@@@@@@@@@@@@@@\n");
@@ -190,7 +208,48 @@ void _tmain(int argc, TSK_TCHAR **argv)
 
 void usage()
 {
-	printf("-h : help\n-n : case name\n-o : offset\n-i <disk>: disk info\n-I <image path>: image mode \n-v : volume \n\n");
+	//printf("-h : help\n-n : case name\n-o : offset\n-i <disk>: disk info\n-I <image path>: image mode \n-v : volume \n\n");
+	printf("\n\n");
+	printf("         ueeeeeeeeee           eeeeeeeeeeX                   ee              eeeeeeeeeeeeeeeeeeeee  \n");
+	printf("         eeeeeeeeeee        eeeeee       eee               ,eeeX             eeeeeeeeeee            \n");
+	printf("         eeeeeeeeeee      eeeeeeee         ee             Geeeee             eeeeeeeeee             \n");
+	printf("         eeeeeeeeee     eeeeeeeeeE          9e           eeeeeeee           Weeeeeeeeee             \n");
+	printf("        ueeeeeeeeee    eeeeeeeeee            eW         eeeeeeeeeu          eeeeeeeeeeeeeeeeeeeee   \n");
+	printf("        eeeeeeeeeee   eeeeeeeeeee            ee       Geeeeeeeeeee          eeeeeeeeee              \n");
+	printf("        eeeeeeeeee,   eeeeeeeeeee            ee      eDeeeeeeeeeeee         eeeeeeeeee              \n");
+	printf("        eeeeeeeeee   eeeeeeeeeee             eD    ueu  eeeeeeeeeee        Eeeeeeeeeee              \n");
+	printf("       eeeeeeeeeee   eeeeeeeeeee             e    ee    eeeeeeeeeeee       eeeeeeeeeeK              \n");
+	printf("       eeeeeeeeeez   eeeeeeeeeee            eK   ee      eeeeeeeeeeeE      eeeeeeeeee               \n");
+	printf("       eeeeeeeeee    WeeeeeeeeeD           e9   eK       zeeeeeeeeeee     Xeeeeeeeeee               \n");
+	printf("      #eeeeeeeeee     eeeeeeeee          ze,  Xe,  Kuuuu  eeeeeeeeeeee    eeeeeeeeeeG               \n");
+	printf("      eeeeeeeeeee      eeeeeeee        Eee   eeGeeeeeeeeee9eeeeeeeeeeey   eeeeeeeeee                \n");
+	printf("      eeeeeeeeee         eeeeeG    ,eeez    ee             eeeeeeeeeeee  eeeeeeeeeee                \n");
+	printf("      9       y              9eeeeeDK   yX 9           e   W                   E   K                \n");
+	printf("     eeKe e e e e e9 W,eyee e  e,  ee  Xe   ee  e e eDee  ee  eu ee eue9e e e  e e                  \n");
+	printf("     eDee9eue e e e  e,e eDGe We   ee  ee ,5 eeee e e eG  ee  e  ee e  eeze eeeeee       BOB 2nd    \n");
+	printf("\n\n");
+	printf("====================================================================================================\n");
+	
+	printf("\n");
+	printf("Default Options:\n");
+	printf("	-n : Case Name 입력              (* Default : Computer Name )\n");
+	printf("	-d : Deep Scan 모드         \n");
+	printf("	-t : TIMELINE 로그 갯수 지정	 (* Default : 50 )\n\n");
+
+	printf("Live Options:\n");
+	printf("	-l : 라이브 드라이브 정보 출력 \n");
+	printf("	-v : 분석할 논리 드라이브명 입력 \n\n");
+	printf("	C:\> IOAF.exe -n \"case_name\" -v \"Volume_name\"\n");
+	printf("	ex) IOAF.exe -n \"Case123\" -v \"C:\"\n\n");
+
+	printf("Image Options:\n");
+	printf("	-i : 디스크 이미지 경로 입력\n");
+	printf("	-o : Offset 설정		 (-i 옵션만 사용 시 Offset정보 확인 가능)\n\n");
+	printf("	C:\> IOAF.exe -n \"case_name\" -i \"Disk Image Path\" -o \"Offset\"\n");
+	printf("	ex) IOAF.exe -n \"Case123\" -i \"C:\saple.dd\"\n");
+	printf("	    IOAF.exe -n \"Case123\" -i \"C:\sample.dd\" -o \"2048\"\n\n");
+
+	printf("====================================================================================================\n");
 	exit(0);
 }
 
@@ -366,14 +425,22 @@ int info_offset(TCHAR *drive)
 
 void drive_info(TCHAR * drive)
 {
+	printf(" into the Dirve_info = %S", drive);
+	if (drive != NULL)
+		info_offset(drive);
+
+	exit(1);
+}
+
+
+void drive_info_live()
+{
 	printf("# The Physical Drives of this Machine : \n");
-	//getPhysicalDrive();
 	system("wmic diskdrive get Caption, Name");
 	printf("\n");
 
 	printf("# The Logical Drives of this Machine : \n");
 	system("wmic logicaldisk get Description, Name, FileSystem, SystemName");
-	if (drive != NULL)
-		info_offset(drive);
+
 	exit(1);
 }

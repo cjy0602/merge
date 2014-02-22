@@ -1,0 +1,32 @@
+﻿빌드 시작: 2014-02-22 오후 1:30:20
+     1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.lib" /MACHINE:X86 /SAFESEH Release\exreg.obj
+         Release\iehist.obj
+         Release\match.obj
+         Release\mft_live.obj
+         Release\module.obj
+         Release\main.obj
+         Release\mft_image.obj
+         Release\mft_image2db.obj
+         Release\parser.obj
+         Release\queue.obj
+         Release\registry.obj
+         Release\sql.obj
+         Release\utc.obj
+     1>libtsk.lib(fs_file.obj) : warning LNK4075: '/EDITANDCONTINUE'이(가) '/OPT:ICF' 사양으로 인해 무시됩니다.
+     1>libtsk.lib(auto.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(auto.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(fatfs_dent.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(fatfs_dent.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(yaffs.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(yaffs.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(ntfs_dent.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '2' 값이 '0'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>libtsk.lib(ntfs_dent.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MDd_DynamicDebug' 값이 'MD_DynamicRelease'(exreg.obj에 위치) 값과 일치하지 않습니다.
+     1>LINK : warning LNK4098: 'MSVCRTD' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+     1>C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe : fatal error LNK1319: 8개의 불일치가 검색되었습니다.
+     1>"C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:00.55
