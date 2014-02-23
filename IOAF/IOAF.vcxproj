@@ -84,6 +84,11 @@
   <ItemGroup>
     <ClCompile Include="exreg.cpp" />
     <ClCompile Include="iehist.cpp" />
+    <ClCompile Include="js_atime.cpp" />
+    <ClCompile Include="js_ctime.cpp" />
+    <ClCompile Include="js_detection_info.cpp" />
+    <ClCompile Include="js_mtimet.cpp" />
+    <ClCompile Include="js_ToolINFO.cpp" />
     <ClCompile Include="match.cpp" />
     <ClCompile Include="mft_live.cpp" />
     <ClCompile Include="module.cpp" />

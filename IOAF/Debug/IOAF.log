@@ -1,76 +1,9 @@
-﻿빌드 시작: 2014-02-23 오전 4:29:18
-2 노드의 "C:\Users\eunjin\Documents\merge4\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
-ClCompile:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\include\include /I"C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib" /IC:\Users\eunjin\Desktop\IOAF2\sqlite /IC:\Users\eunjin\Desktop\IOAF2\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt iehist.cpp main.cpp
-  main.cpp
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(128): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(136): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\io.h(302) : 'access' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(141): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\io.h(302) : 'access' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(146): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\io.h(302) : 'access' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(217): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(184): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(257): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(263): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(264): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(265): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(372): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(370): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\main.cpp(363): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
-  iehist.cpp
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(150): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(104): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(303): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(314): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(345): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(365): warning C4101: 't' :참조되지 않은 지역 변수입니다.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(422): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(504): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(568): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(642): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(662): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(670): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(678): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(686): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-          c:\program files\microsoft visual studio 11.0\vc\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
-  코드를 생성하고 있습니다...
-c:\users\eunjin\documents\merge4\ioaf\iehist.cpp(756): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
-Link:
-  C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:C:\Users\eunjin\Desktop\IOAF2\sqlite /LIBPATH:"C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\eunjin\Documents\merge4\Debug\IOAF.lib" /MACHINE:X86 Debug\exreg.obj
-  Debug\iehist.obj
-  Debug\match.obj
-  Debug\mft_live.obj
-  Debug\module.obj
-  Debug\main.obj
-  Debug\mft_image.obj
-  Debug\mft_image2db.obj
-  Debug\parser.obj
-  Debug\queue.obj
-  Debug\registry.obj
-  Debug\sql.obj
-  Debug\utc.obj
-  IOAF.vcxproj -> C:\Users\eunjin\Documents\merge4\Debug\IOAF.exe
-"C:\Users\eunjin\Documents\merge4\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+﻿빌드 시작: 2014-02-23 오후 5:39:58
+     1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
+     1>Link:
+         IOAF.vcxproj -> C:\Users\cjy\Desktop\merge-master\merge-master\Debug\IOAF.exe
+     1>"C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
 빌드했습니다.
 
-경과 시간: 00:00:04.53
+경과 시간: 00:00:00.20

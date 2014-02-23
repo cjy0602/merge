@@ -15,3 +15,5 @@ int open_fs_image(TCHAR *ImagePath, int offset, TSK_IMG_INFO **img,TSK_FS_INFO *
 void img_fs_close(TSK_IMG_INFO **img,TSK_FS_INFO **fs );
 void deepscan(TCHAR * CaseName);
 void scan(TCHAR * CaseName);
+
+void js_create_module(int Timeline_num);

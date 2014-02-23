@@ -172,6 +172,8 @@ void _tmain(int argc, TSK_TCHAR **argv)
 			ie_file(fs);
 
 			img_fs_close(&img, &fs);
+
+			js_create_module(Timeline_num);
 		}
 
 	}
@@ -193,6 +195,7 @@ void _tmain(int argc, TSK_TCHAR **argv)
 			printf("Extracting ie history ...\n");
 			ie_file(fs);
 			img_fs_close(&img, &fs);
+			js_create_module(Timeline_num);
 		}
 	}
 
@@ -209,15 +212,113 @@ void _tmain(int argc, TSK_TCHAR **argv)
 		scan(CaseName);
 	
 
+
+
 	// CaseName 폴더로 파일들 이동!..
 
     char *buffer = (char *)malloc(500);
     memset(buffer, 0x00, sizeof(char)*500);
-
 	sprintf(buffer, "move info.db %s", casename_char);
 	system(buffer);
-
 	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move A_Data.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move C_Data.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move M_Data.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move Detection_info.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move jstopmake.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move report.html %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move style.css %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move tabs.css %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move events.css %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move graphics.css %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move modernizr.min.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move jquery.min.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move jquery.tabs.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move tab_design.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move simile-ajax-api.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
+	buffer = (char *)malloc(500);
+    memset(buffer, 0x00, sizeof(char)*500);
+	sprintf(buffer, "move timeline-api.js %s", casename_char);
+	system(buffer);
+	free(buffer);
+
 
 }
 

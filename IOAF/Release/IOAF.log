@@ -1,43 +1,280 @@
-﻿빌드 시작: 2014-02-22 오후 9:45:09
+﻿빌드 시작: 2014-02-23 오후 5:40:02
      1>2 노드의 "C:\Users\cjy\Desktop\merge-master\merge-master\IOAF\IOAF.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\include\include /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp mft_image2db.cpp mft_live.cpp
-         main.cpp
-     1>main.cpp(128): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
-     1>main.cpp(136): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(141): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(146): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
-     1>main.cpp(217): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-     1>main.cpp(184): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
-     1>main.cpp(257): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>main.cpp(263): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>main.cpp(264): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>main.cpp(265): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>main.cpp(372): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
-     1>main.cpp(370): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
-     1>main.cpp(363): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
-         mft_image2db.cpp
-     1>mft_image2db.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-     1>mft_image2db.cpp(73): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
-     1>mft_image2db.cpp(25): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
-     1>mft_image2db.cpp(115): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\cjy\Desktop\MFTParser\include\include /IC:\Users\cjy\Desktop\MFTParser\NTFSLib /IC:\Users\cjy\Desktop\MFTParser\sqlite\Debug /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt exreg.cpp iehist.cpp js_atime.cpp js_ctime.cpp js_detection_info.cpp js_mtimet.cpp js_ToolINFO.cpp match.cpp mft_live.cpp module.cpp main.cpp mft_image.cpp mft_image2db.cpp parser.cpp sql.cpp
+         exreg.cpp
+     1>exreg.cpp(41): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(164) : 'strerror' 선언을 참조하십시오.
+     1>exreg.cpp(84): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
-     1>mft_image2db.cpp(128): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
-     1>mft_image2db.cpp(147): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
-     1>mft_image2db.cpp(156): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
-     1>mft_image2db.cpp(161): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>exreg.cpp(94): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(164) : 'strerror' 선언을 참조하십시오.
+     1>exreg.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>exreg.cpp(156): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>exreg.cpp(168): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>exreg.cpp(180): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>exreg.cpp(191): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+         iehist.cpp
+     1>iehist.cpp(150): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(104): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+     1>iehist.cpp(303): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(314): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>mft_image2db.cpp(171): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>iehist.cpp(317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>iehist.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>iehist.cpp(345): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>iehist.cpp(365): warning C4101: 't' :참조되지 않은 지역 변수입니다.
+     1>iehist.cpp(422): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>iehist.cpp(504): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>iehist.cpp(568): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>iehist.cpp(642): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(662): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(670): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(678): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+     1>iehist.cpp(686): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(191) : 'strncpy' 선언을 참조하십시오.
+         js_atime.cpp
+     1>js_atime.cpp(57): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\time.inl(112) : 'localtime' 선언을 참조하십시오.
+     1>js_atime.cpp(58): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(54): warning C4101: 'dayday' :참조되지 않은 지역 변수입니다.
+     1>js_atime.cpp(107): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(108): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(109): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(94): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+     1>js_atime.cpp(139): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(141): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(183): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>js_atime.cpp(211): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(221): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(231): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(241): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(264): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_atime.cpp(266): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(268): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(271): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_atime.cpp(277): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(287): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(297): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(306): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_atime.cpp(329): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_atime.cpp(331): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(333): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_atime.cpp(336): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+         js_ctime.cpp
+     1>js_ctime.cpp(56): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\time.inl(112) : 'localtime' 선언을 참조하십시오.
+     1>js_ctime.cpp(57): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(53): warning C4101: 'dayday' :참조되지 않은 지역 변수입니다.
+     1>js_ctime.cpp(106): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(107): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(108): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(93): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+     1>js_ctime.cpp(138): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(140): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(182): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>js_ctime.cpp(210): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(220): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(230): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(240): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(263): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_ctime.cpp(265): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(267): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(270): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_ctime.cpp(276): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(286): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(296): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(306): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ctime.cpp(329): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>js_ctime.cpp(331): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(333): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_ctime.cpp(336): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+         js_detection_info.cpp
+     1>js_detection_info.cpp(49): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\time.inl(112) : 'localtime' 선언을 참조하십시오.
+     1>js_detection_info.cpp(50): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_detection_info.cpp(46): warning C4101: 'dayday' :참조되지 않은 지역 변수입니다.
+     1>js_detection_info.cpp(101): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_detection_info.cpp(103): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_detection_info.cpp(139): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>js_detection_info.cpp(122): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+         js_mtimet.cpp
+     1>js_mtimet.cpp(52): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\time.inl(112) : 'localtime' 선언을 참조하십시오.
+     1>js_mtimet.cpp(53): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(49): warning C4101: 'dayday' :참조되지 않은 지역 변수입니다.
+     1>js_mtimet.cpp(101): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(102): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(103): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(89): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+     1>js_mtimet.cpp(130): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(132): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(170): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>js_mtimet.cpp(197): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(207): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(217): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(227): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(253): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(255): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(264): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(274): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(284): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(294): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_mtimet.cpp(320): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>js_mtimet.cpp(322): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+         js_ToolINFO.cpp
+     1>js_ToolINFO.cpp(34): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\time.inl(112) : 'localtime' 선언을 참조하십시오.
+     1>js_ToolINFO.cpp(35): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>js_ToolINFO.cpp(31): warning C4101: 'dayday' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(74): warning C4101: 'dateString' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(122): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>js_ToolINFO.cpp(106): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(106): warning C4101: 'ncols' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(106): warning C4101: 'nrows' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(105): warning C4101: 'result1' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(107): warning C4101: 'nzErr' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(105): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+     1>js_ToolINFO.cpp(106): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+         match.cpp
+     1>match.cpp(57): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(53): warning C4101: 'text' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(52): warning C4101: 'bytes' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(121): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(81): warning C4101: 'rc' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(117): warning C4101: 'text' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(116): warning C4101: 'bytes' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(160): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(173): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(143): warning C4101: 'rc' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(142): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(216): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(229): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(202): warning C4101: 'rc' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(201): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(273): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(287): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(259): warning C4101: 'rc' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(258): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(336): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(348): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(322): warning C4101: 'rc' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(321): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(403): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(384): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(382): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(460): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(441): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(439): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(527): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(531): warning C4390: ';' : 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+     1>match.cpp(532): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(536): warning C4390: ';' : 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+     1>match.cpp(551): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(555): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(561): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>match.cpp(505): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(503): warning C4101: 'sql' :참조되지 않은 지역 변수입니다.
+     1>match.cpp(544): warning C4101: 'bytes' :참조되지 않은 지역 변수입니다.
          mft_live.cpp
      1>mft_live.cpp : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
      1>c:\users\cjy\desktop\mftparser\ntfslib\NTFS_Attribute.h(160): warning C4996: 'wcsncpy': This function or variable may be unsafe. Consider using wcsncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -61,21 +298,126 @@
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
      1>mft_live.cpp(61): warning C4172: 지역 변수 또는 임시 변수의 주소를 반환하고 있습니다.
      1>mft_live.cpp(68): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
-     1>mft_live.cpp(184): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mft_live.cpp(179): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
-     1>mft_live.cpp(256): warning C4244: '=' : 'ULONGLONG'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-     1>mft_live.cpp(311): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
-     1>mft_live.cpp(359): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mft_live.cpp(251): warning C4244: '=' : 'ULONGLONG'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>mft_live.cpp(306): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_live.cpp(354): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
-     1>mft_live.cpp(412): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
-     1>mft_live.cpp(415): warning C4129: '/' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
-     1>mft_live.cpp(415): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mft_live.cpp(407): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_live.cpp(410): warning C4129: '/' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>mft_live.cpp(410): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
-     1>mft_live.cpp(416): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mft_live.cpp(411): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(115) : 'strcat' 선언을 참조하십시오.
+         module.cpp
+     1>module.cpp(73): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
+     1>module.cpp(77): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(233) : 'freopen' 선언을 참조하십시오.
+         main.cpp
+     1>main.cpp(128): warning C4996: 'mkdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _mkdir. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\direct.h(140) : 'mkdir' 선언을 참조하십시오.
+     1>main.cpp(136): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(141): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(146): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _access. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\io.h(302) : 'access' 선언을 참조하십시오.
+     1>main.cpp(221): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(227): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(233): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(239): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(245): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(251): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(257): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(263): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(269): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(275): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(282): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(288): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(294): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(300): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(306): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(312): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(318): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>main.cpp(186): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(358): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(364): warning C4129: '>' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(365): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(366): warning C4129: 's' : 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+     1>main.cpp(473): warning C4101: 'cp' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(471): warning C4101: 'argv' :참조되지 않은 지역 변수입니다.
+     1>main.cpp(464): warning C4101: 'ch' :참조되지 않은 지역 변수입니다.
+         mft_image.cpp
+     1>mft_image.cpp(64): warning C4996: '_snwprintf': This function or variable may be unsafe. Consider using _snwprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(474) : '_snwprintf' 선언을 참조하십시오.
+         mft_image2db.cpp
+     1>mft_image2db.cpp(57): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>mft_image2db.cpp(68): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+     1>mft_image2db.cpp(25): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+     1>mft_image2db.cpp(110): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(218) : 'fopen' 선언을 참조하십시오.
+     1>mft_image2db.cpp(123): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(142): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(151): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+     1>mft_image2db.cpp(156): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : 'strcpy' 선언을 참조하십시오.
+     1>mft_image2db.cpp(166): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(200) : 'strtok' 선언을 참조하십시오.
+         parser.cpp
+     1>parser.cpp(94): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(99): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(103): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(108): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(112): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(116): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(120): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(140): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>parser.cpp(144): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+         sql.cpp
+     1>sql.cpp(34): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : 'sprintf' 선언을 참조하십시오.
+     1>sql.cpp(50): warning C4244: '인수' : '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>sql.cpp(10): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-release" /LIBPATH:C:\Users\cjy\Desktop\MFTParser\sqlite\Debug /LIBPATH:"C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug" sqlite3.lib zdll.lib libewf.lib libtsk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\cjy\Desktop\merge-master\merge-master\Release\IOAF.lib" /MACHINE:X86 /SAFESEH Release\exreg.obj
          Release\iehist.obj
+         Release\js_atime.obj
+         Release\js_ctime.obj
+         Release\js_detection_info.obj
+         Release\js_mtimet.obj
+         Release\js_ToolINFO.obj
          Release\match.obj
          Release\mft_live.obj
          Release\module.obj
@@ -89,8 +431,8 @@
          Release\utc.obj
          코드를 생성하고 있습니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_live.cpp(63): warning C4715: 'getFullPath' : 모든 제어 경로에서 값을 반환하지는 않습니다.
-     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(769): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
      1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\mft_image.cpp(156): warning C4715: 'mft_image' : 모든 제어 경로에서 값을 반환하지는 않습니다.
+     1>c:\users\cjy\desktop\merge-master\merge-master\ioaf\iehist.cpp(756): warning C4715: 'iehist' : 모든 제어 경로에서 값을 반환하지는 않습니다.
          코드를 생성했습니다.
      1>sqlite3.lib(sqlite3.obj) : warning LNK4099: 'vc110.pdb' PDB를 'sqlite3.lib(sqlite3.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
      1>libtsk.lib(fs_file.obj) : warning LNK4099: 'vc110.pdb' PDB를 'libtsk.lib(fs_file.obj)' 또는 'C:\Users\cjy\Desktop\merge-master\merge-master\Release\vc110.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
@@ -159,4 +501,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:11.52
+경과 시간: 00:00:19.88

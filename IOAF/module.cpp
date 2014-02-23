@@ -31,6 +31,16 @@ void ie_hist_module(TSK_FS_INFO *fs)
 }
 */
 
+void js_create_module(int Timeline_num)
+{
+	js_atime_create(Timeline_num);
+	js_mtime_create(Timeline_num);
+	js_ctime_create(Timeline_num);
+	js_detection_info();
+	js_toolinfo();
+}
+
+
 void mft_live_module(TCHAR *volName, TCHAR *CaseName)
 {
 	char* ctmp;
