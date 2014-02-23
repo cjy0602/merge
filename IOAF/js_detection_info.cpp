@@ -28,6 +28,15 @@ struct RemainData{
 };
 typedef struct RemainData rm;
 
+char *newValues_file[10];
+char dateString1[32];
+char dateString2[32];
+char dateString3[32];
+char dateString4[32];
+char dateString5[32];
+char dateString6[32];
+
+
  static rm arr_detection[21];
  static  rm temp_detection;
 
@@ -81,7 +90,55 @@ static char* replaceStr(char* orgStr, char replChar) {
 	return newData;
 
 }
+static int calld(void *data, int nColumnCount, char **columnValues, char **columnNames){
+   int i;   
+   char *action =  (char *)malloc(500);
+   struct CallbackData *callbackData = (struct CallbackData *)data;
+   FILE *fp = callbackData->fp;
 
+   memset(action, 0x00, sizeof(char)*500);
+
+    for(i=0; i<nColumnCount; i++) {
+      newValues_file[i] = replaceStr(columnValues[i], '\\');
+    }
+   if(atoi(newValues_file[2]) == 1){
+      action = "install";
+   }else if(atoi(newValues_file[2]) == 2){
+         action = "open";
+   }else if(newValues_file[2] == "3"){
+         strcpy(action, "run");
+   }else if(newValues_file[2] == "1"){
+         strcpy(action, "uninstall");
+   }
+ 
+   if (callbackData->firstItem == 0) {
+      epochtimetolocaltime_detection(newValues_file[4], dateString1);
+      epochtimetolocaltime_detection(newValues_file[5], dateString2);
+      epochtimetolocaltime_detection(newValues_file[6], dateString3);
+      epochtimetolocaltime_detection(newValues_file[7], dateString4);
+      epochtimetolocaltime_detection(newValues_file[8], dateString5);
+      epochtimetolocaltime_detection(newValues_file[9], dateString6);
+      fprintf(fp,",\n        {'name': 'Detected Action : %s %s'ed,\n         'PATH' : 'Detected Signature : %s',\n         'FN_mtime' : 'Detected Time : %s' \n         'FN_ctime' : 'Detected Time : %s' \n         'FN_atime' : 'Detected Time : %s' \n         'SI_mtime' : 'Detected Time : %s' \n         'SI_atime' : 'Detected Time : %s' \n         'SI_ctime' : 'Detected Time : %s' \n        }",   
+         newValues_file[0], action,newValues_file[3],dateString1,dateString2,dateString3,dateString4,dateString5,dateString6);
+   } else {
+      epochtimetolocaltime_detection(newValues_file[4], dateString1);
+      epochtimetolocaltime_detection(newValues_file[5], dateString2);
+      epochtimetolocaltime_detection(newValues_file[6], dateString3);
+      epochtimetolocaltime_detection(newValues_file[7], dateString4);
+      epochtimetolocaltime_detection(newValues_file[8], dateString5);
+      epochtimetolocaltime_detection(newValues_file[9], dateString6);
+
+      fprintf(fp,"        {'name': 'Detected Action : %s %s',\n         'PATH' : 'Detected Signature : %s',\n         'FN_mtime' : 'Detected Time : %s' \n         'FN_ctime' : 'Detected Time : %s' \n         'FN_atime' : 'Detected Time : %s' \n         'SI_mtime' : 'Detected Time : %s' \n         'SI_atime' : 'Detected Time : %s' \n         'SI_ctime' : 'Detected Time : %s' \n        }", 
+         newValues_file[0], action,newValues_file[3],dateString1,dateString2,dateString3,dateString4,dateString5,dateString6);
+      callbackData->firstItem = 0;
+   }
+   count_detection = nColumnCount;
+      for(i=0; i<count_detection; i++) {
+      free(newValues_file[i]);
+   }
+   
+   return 0;
+}
 static int callback(void *data, int nColumnCount, char **columnValues, char **columnNames){
 	int i;	
 	char *action =  (char *)malloc(500);
@@ -151,6 +208,15 @@ int js_detection_info(){
      // fprintf(stdout, "Operation done successfully\n");
    }
   
+   sql = "SELECT tool.name, tool.detail, match_file.action, match_file.path, match_file.FN_mtime, match_file.FN_ctime, match_file.FN_atime,  match_file.SI_mtime, match_file.SI_atime, match_file.SI_ctime  from match_file INNER JOIN tool ON match_file.tool = tool.tool_num";
+   rc = sqlite3_exec(db, sql, calld, (void*)&callbackData, &zErrMsg);
+   if( rc != SQLITE_OK ){
+      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+      sqlite3_free(zErrMsg);
+   }else{
+      fprintf(stdout, "Operation done successfully\n");
+   }
+
    for(i=0; i<count_detection; i++) {
 	   free(newValues_detection[i]);
    }

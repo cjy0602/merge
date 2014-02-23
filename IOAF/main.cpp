@@ -210,8 +210,8 @@ void _tmain(int argc, TSK_TCHAR **argv)
 	
 	if ( deepchk == 1)
 	{
-		printf("Detected Pattern\n");
-		printf("\n\n");
+		printf("\t\t @@@ Detected Pattern @@@ \t\t\n");
+		printf("\n");
 
 		deepscan(CaseName);
 		js_create_module(Timeline_num);
