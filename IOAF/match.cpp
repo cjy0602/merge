@@ -524,7 +524,7 @@ void tool_info()
 
 	rc = sqlite3_exec(infodb, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg); 
 
-	sprintf (buffer,"INSERT INTO tool(detail, name, tool_num, type) VALUES ( ?1, ?2, ?3, ?4)");
+	sprintf (buffer,"INSERT INTO tool(detail, name, tool_num, type) VALUES ( ?4, ?1, ?2, ?3)");
 
 	if(sqlite3_prepare_v2(infodb, buffer, strlen(buffer), &infostmt, NULL) == SQLITE_OK);// printf("prepare success infodb\n");
 

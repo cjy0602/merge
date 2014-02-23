@@ -28,8 +28,8 @@ struct RemainData{
 };
 typedef struct RemainData rm;
 
- static rm arr[21];
- static  rm temp;
+ static rm arr_detection[21];
+ static  rm temp_detection;
 
 static const char *Weekdays[] = {
     "Sun", "Mon", "Tue", "Wed",
@@ -128,10 +128,10 @@ int js_detection_info(){
 
 	rc = sqlite3_open("info.db", &db);
    if( rc ){
-      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+  ///    fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       exit(0);
    }else{
-      fprintf(stderr, "Opened database successfully\n");
+   //   fprintf(stderr, "Opened database successfully\n");
    }
    
 	sql = "SELECT tool.name, tool.detail, match_Registry.key, match_Registry.mtime, match_Registry.action  from match_Registry INNER JOIN tool ON match_Registry.tool = tool.tool_num";
@@ -145,10 +145,10 @@ int js_detection_info(){
 	callbackData.firstItem = 1;
    rc = sqlite3_exec(db, sql, callback, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+     // fprintf(stdout, "Operation done successfully\n");
    }
   
    for(i=0; i<count_detection; i++) {

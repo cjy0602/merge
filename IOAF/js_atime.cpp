@@ -36,8 +36,8 @@ struct RemainData{
 };
 typedef struct RemainData rm;
 
- static rm arr[400];
- static rm temp;
+ static rm arr_atime[400];
+ static rm temp_atime;
 
 static const char *Weekdays[] = {
     "Sun", "Mon", "Tue", "Wed",
@@ -102,15 +102,12 @@ static int callbacka(void *data, int nColumnCount, char **columnValues, char **c
 	   newValues2[i] = replaceStr(columnValues[i], '\\');
     }
 
-		memset(arr[num].rPath, 0x00, sizeof(char)*200);
-		memset(arr[num].rTime, 0x00, sizeof(char)*200);
-		   strcpy(arr[num].rPath,newValues2[0]);
-		   strcpy(arr[num].rTime,newValues2[1]);
-		   strcpy(arr[num].rType,newValues2[2]);
-		   printf("\n");
-		printf("arr[%d].rPath : %s\n", num, arr[num].rPath);
-		printf("arr[%d].rTime : %s\n", num, arr[num].rTime);
-
+		memset(arr_atime[num].rPath, 0x00, sizeof(char)*200);
+		memset(arr_atime[num].rTime, 0x00, sizeof(char)*200);
+		   strcpy(arr_atime[num].rPath,newValues2[0]);
+		   strcpy(arr_atime[num].rTime,newValues2[1]);
+		   strcpy(arr_atime[num].rType,newValues2[2]);
+	
 		num++;
 		
   for(i=0; i<nColumnCount; i++) {
@@ -172,10 +169,10 @@ int js_atime_create(int limit_count){
 
 	rc = sqlite3_open("info.db", &db);
    if( rc ){
-      fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+     // fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
       exit(0);
    }else{
-      fprintf(stderr, "Opened database successfully\n");
+      //fprintf(stderr, "Opened database successfully\n");
    }
    
 	sql = "SELECT tool.name, tool.detail, match_Registry.key, match_Registry.mtime, match_Registry.action  from match_Registry INNER JOIN tool ON match_Registry.tool = tool.tool_num";
@@ -189,20 +186,20 @@ int js_atime_create(int limit_count){
 	callbackData.firstItem = 1;
    rc = sqlite3_exec(db, sql, callback3, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+     // fprintf(stdout, "Operation done successfully\n");
    }
    
    sql = "SELECT tool.name, tool.detail, match_file.path, match_file.FN_mtime, match_file.action  from match_file INNER JOIN tool ON tool.tool_num = match_file.tool";
 
    rc = sqlite3_exec(db, sql, callback3, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+    //  fprintf(stdout, "Operation done successfully\n");
    }
    
    //match < limit LIMITCOUNT output
@@ -212,64 +209,64 @@ int js_atime_create(int limit_count){
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+      //fprintf(stdout, "Operation done successfully\n");
    }
 
    sprintf(buffer,"SELECT FULLPATH,  SI_accessTm, TYPE from MFT where SI_accessTm > %s ORDER BY SI_accessTm LIMIT %d",newValues[3],LIMITCOUNT);
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+     // fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+    //  fprintf(stdout, "Operation done successfully\n");
    }
 
    sprintf(buffer,"SELECT URL, TIME, TYPE from HISTORY where TIME > %s ORDER BY TIME LIMIT %d",newValues[3],LIMITCOUNT);
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+     // fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+    //  fprintf(stdout, "Operation done successfully\n");
    }
 
    sprintf(buffer,"SELECT Location, TIME, TYPE from DOWNLOAD where TIME > %s ORDER BY TIME LIMIT %d",newValues[3],LIMITCOUNT);
  
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+     // fprintf(stdout, "Operation done successfully\n");
    }
    //bubble
 		for(i=0;i<num;i++)
 		 {
 			for(j=i+1;j<num;j++)
 			{
-				if(atoi(arr[i].rTime) > atoi(arr[j].rTime) )            
+				if(atoi(arr_atime[i].rTime) > atoi(arr_atime[j].rTime) )            
 				{
-					temp = arr[j];
-					arr[j] = arr[i];
-					arr[i] = temp;
+					temp_atime = arr_atime[j];
+					arr_atime[j] = arr_atime[i];
+					arr_atime[i] = temp_atime;
 				}
 			}
 		}
    		
 		for(i=0; i<LIMITCOUNT;i++){
-		epochtimetolocaltime(arr[i].rTime, dateString);
-		strcpy(arr[i].rTime, dateString);
-		if( atoi(arr[i].rType)==1){
-			strcpy(arr[i].rType,"IE");
+		epochtimetolocaltime(arr_atime[i].rTime, dateString);
+		strcpy(arr_atime[i].rTime, dateString);
+		if( atoi(arr_atime[i].rType)==1){
+			strcpy(arr_atime[i].rType,"IE");
 		}
 		}
 		for(i=0; i<LIMITCOUNT ;i++){
-			fprintf(fp,",\n        {'start': '%s',\n        'description': '%s',\n        'title': '%s',\n        }",arr[i].rTime,arr[i].rPath, arr[i].rType);
+			fprintf(fp,",\n        {'start': '%s',\n        'description': '%s',\n        'title': '%s',\n        }",arr_atime[i].rTime,arr_atime[i].rPath, arr_atime[i].rType);
 		}
 
 		//match > limit LIMITCOUNT output
@@ -278,63 +275,63 @@ int js_atime_create(int limit_count){
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+    //  fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+      //fprintf(stdout, "Operation done successfully\n");
    }
 
    sprintf(buffer,"SELECT FULLPATH, SI_accessTm, TYPE from MFT where SI_accessTm < %s ORDER BY SI_accessTm DESC LIMIT %d",newValues[3],LIMITCOUNT);
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+     // fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+    //  fprintf(stdout, "Operation done successfully\n");
    }
 
    sprintf(buffer,"SELECT URL, TIME, TYPE from HISTORY where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues[3],LIMITCOUNT);
 
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+   //   fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+     // fprintf(stdout, "Operation done successfully\n");
    }
    sprintf(buffer,"SELECT Location, TIME, TYPE from DOWNLOAD where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues[3],LIMITCOUNT);
  
    rc = sqlite3_exec(db, buffer, callbacka, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
-      fprintf(stderr, "SQL error: %s\n", zErrMsg);
+     // fprintf(stderr, "SQL error: %s\n", zErrMsg);
       sqlite3_free(zErrMsg);
    }else{
-      fprintf(stdout, "Operation done successfully\n");
+    //  fprintf(stdout, "Operation done successfully\n");
    }
    //bubble
 		for(i=0;i<num;i++)
 		 {
 			for(j=i+1;j<num;j++)
 			{
-				if(atoi(arr[i].rTime) < atoi(arr[j].rTime) )            
+				if(atoi(arr_atime[i].rTime) < atoi(arr_atime[j].rTime) )            
 				{
-					temp = arr[j];
-					arr[j] = arr[i];
-					arr[i] = temp;
+					temp_atime = arr_atime[j];
+					arr_atime[j] = arr_atime[i];
+					arr_atime[i] = temp_atime;
 				}
 			}
 		}
    		
 		for(i=0; i<LIMITCOUNT;i++){
-		epochtimetolocaltime(arr[i].rTime, dateString);
-		strcpy(arr[i].rTime, dateString);
-		if( atoi(arr[i].rType)==1){
-			strcpy(arr[i].rType,"IE");
+		epochtimetolocaltime(arr_atime[i].rTime, dateString);
+		strcpy(arr_atime[i].rTime, dateString);
+		if( atoi(arr_atime[i].rType)==1){
+			strcpy(arr_atime[i].rType,"IE");
 		}
 		}
 		for(i=0; i<LIMITCOUNT ;i++){
-			fprintf(fp,",\n        {'start': '%s',\n        'description': '%s',\n        'title': '%s',\n        }",arr[i].rTime,arr[i].rPath,arr[i].rType);
+			fprintf(fp,",\n        {'start': '%s',\n        'description': '%s',\n        'title': '%s',\n        }",arr_atime[i].rTime,arr_atime[i].rPath,arr_atime[i].rType);
 		}
 
    for(i=0; i<count; i++) {
