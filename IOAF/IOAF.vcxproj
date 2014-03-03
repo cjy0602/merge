@@ -70,14 +70,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\cjy\Desktop\MFTParser\include\include;C:\Users\cjy\Desktop\MFTParser\NTFSLib;C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\eunjin\Desktop\MFT_2-master\MFT_2-master\NTFSLib;C:\Users\eunjin\Desktop\IOAF2\include;C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\cjy\Desktop\MFTParser\include\include;C:\Users\cjy\Desktop\MFTParser\NTFSLib;C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\cjy\Desktop\MFTParser\sleuthkit-release;C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\eunjin\Desktop\IOAF2\sleuthkit-master\win32\Release;C:\Users\eunjin\Desktop\IOAF2\sqlite;C:\Users\cjy\Desktop\MFTParser\sleuthkit-release;C:\Users\cjy\Desktop\MFTParser\sqlite\Debug;C:\Users\cjy\Desktop\MFTParser\sleuthkit-master\sleuthkit-master\win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sqlite3.lib;zdll.lib;libewf.lib;libtsk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

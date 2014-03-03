@@ -257,3 +257,10 @@ void scan(TCHAR * CaseName)
 	FILE2SQL(&mfq);
 	tool_info();
 }
+
+void usb_info()
+{
+	USBq q;
+	get_USB(&q);
+	USBG2SQL(&q);
+}

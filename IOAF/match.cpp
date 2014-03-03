@@ -585,3 +585,121 @@ void tool_info()
 	sqlite3_close(infodb);
 
 }
+
+void get_USB(USBq * q)
+{
+
+	sqlite3 *sigDB = NULL;
+
+
+	sqlite3_stmt *sigSTMT = NULL;
+	char *sql;
+	//int rc; 
+	char* errorMsg = NULL;
+	if(sqlite3_open("info.db", &sigDB) != SQLITE_OK)
+	{
+		fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(sigDB));
+	}
+
+	sql = "select * from Registry where PATH like \"%%/Enum/USBSTOR%%\";";
+	if( sqlite3_exec(sigDB, sql, NULL, NULL, NULL) == SQLITE_OK) { 
+
+	} else {
+
+		exit(1);
+	}
+
+
+	if(sqlite3_prepare_v2(sigDB, sql, strlen(sql), &sigSTMT, NULL) == SQLITE_OK) 
+	{
+		//puts(">> Prepared Statement is ready : Succeeded!\n");
+	}
+	else
+	{
+		//puts("테이블 값 입력에 실패하였습니다.");
+	}
+
+	int row = 0;
+	while (1) {
+		int s;
+
+
+		s = sqlite3_step (sigSTMT);
+		if (s == SQLITE_ROW) {
+			USB * tmp = (USB * ) malloc(sizeof(USB));
+			memset(tmp, 0, sizeof(USB));
+			int bytes;
+			const unsigned char * text;
+			////////////////////////////////////////////////////////////////////
+			tmp->time = sqlite3_column_int(sigSTMT, 1);
+			sprintf(tmp->PATH, "%s", (char * )sqlite3_column_text(sigSTMT, 0));
+			////////////////////////////////////////////////////////////////////
+			q->push(tmp);
+			row++;
+		}
+		else if (s == SQLITE_DONE) {
+			break;
+		}
+		else {
+			fprintf (stderr, "Failed.\n");
+			exit (1);
+		}
+	}
+	sqlite3_finalize(sigSTMT);
+	sqlite3_close(sigDB);
+}
+
+void USBG2SQL(USBq * q)
+{
+	 sqlite3 *db = NULL; 
+    sqlite3_stmt *stmt = NULL;
+    char *sql;
+    int rc; 
+    unsigned int i;
+    char *buffer = (char *)malloc(500); 
+    char* errorMsg = NULL;
+
+    memset(buffer, 0x00, sizeof(char)*500); 
+
+
+    if(sqlite3_open("info.db", &db) != SQLITE_OK)
+    {
+        fprintf(stderr, "DB접근이 어렵습니다. (오류 %s)\n", sqlite3_errmsg(db));
+    }
+
+	if( sqlite3_exec(db, "create table IF NOT EXISTS USB(PATH TEXT, time NUMERIC);", NULL, NULL, NULL) == SQLITE_OK) { 
+	} else {
+		exit(1);
+	}
+
+    rc = sqlite3_exec(db, "BEGIN TRANSACTION;", NULL, NULL, &errorMsg); 
+  
+	sprintf (buffer,"INSERT INTO USB(PATH, time) VALUES ( ?1, ?2)");
+
+    if(sqlite3_prepare_v2(db, buffer, strlen(buffer), &stmt, NULL) == SQLITE_OK) 
+    {
+        puts(">> Prepared Statement is ready : Succeeded!\n");
+    }
+    else
+    {
+        puts("테이블 값 입력에 실패하였습니다.");
+    }
+
+	 while (!q->empty())
+    {
+		USB * tmp;
+		tmp=q->front();
+		sqlite3_bind_text(stmt, 1, q->front()->PATH, strlen(q->front()->PATH), SQLITE_STATIC);
+		sqlite3_bind_int64(stmt, 2, q->front()->time);
+        q->pop();
+		if ( sqlite3_step(stmt) != SQLITE_DONE )  {
+        }
+        sqlite3_reset(stmt); 
+		free(tmp);
+    }
+    rc = sqlite3_exec(db, "COMMIT TRANSACTION;", NULL, NULL, &errorMsg);
+    //fprintf(stderr, " Commit result : %s\n", errorMsg);
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+
+}

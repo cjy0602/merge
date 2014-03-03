@@ -51,12 +51,18 @@ struct sig_registry{
 	int tool;
 	char key[0x1000];
 };
+struct USB
+{
+	char PATH[0x1000];
+	long long time;
+};
 
 
 typedef queue<match_file*> MATCHFILEQ;
 typedef queue<match_registry*> MATCHREGQ;
 typedef queue<sig_file*> SIGFILEQ;
 typedef queue<sig_registry*> SIGREGQ;
+typedef queue<USB*> USBq;
 
 #endif
 
@@ -69,3 +75,5 @@ void Deep_matching_FILE(SIGFILEQ *q, MATCHFILEQ *mq);
 void REG2SQL(MATCHREGQ * mq);
 void FILE2SQL(MATCHFILEQ * mq);
 void tool_info();
+void get_USB(USBq * q);
+void USBG2SQL(USBq * q);

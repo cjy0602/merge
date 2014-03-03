@@ -17,3 +17,4 @@ void deepscan(TCHAR * CaseName);
 void scan(TCHAR * CaseName);
 
 void js_create_module(int Timeline_num);
+void usb_info();

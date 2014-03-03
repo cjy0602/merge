@@ -170,7 +170,7 @@ void _tmain(int argc, TSK_TCHAR **argv)
 
 			printf("Extracting ie history ...\n");
 			ie_file(fs);
-
+			usb_info();
 			img_fs_close(&img, &fs);
 
 
@@ -195,6 +195,7 @@ void _tmain(int argc, TSK_TCHAR **argv)
 			printf("Extracting ie history ...\n");
 			ie_file(fs);
 			img_fs_close(&img, &fs);
+			usb_info();
 
 		}
 	}
