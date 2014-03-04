@@ -34,10 +34,15 @@ void ie_hist_module(TSK_FS_INFO *fs)
 void js_create_module(int Timeline_num)
 {
 	js_atime_create(Timeline_num);
+	printf("@@@ atime creation success @@@\n");
 	js_mtime_create(Timeline_num);
+	printf("@@@ ctime creation success @@@\n");
 	js_ctime_create(Timeline_num);
-	js_detection_info();
-	js_toolinfo();
+	printf("@@@ mtime creation success @@@\n");
+	//js_detection_info();
+	printf("@@@ detection info creation success @@@\n");
+	//js_toolinfo();
+	printf("@@@ tool info creation success @@@\n");
 }
 
 

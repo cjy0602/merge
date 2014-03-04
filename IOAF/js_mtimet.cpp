@@ -150,7 +150,7 @@ static int callback1(void *data, int nColumnCount, char **columnValues, char **c
 
 int js_mtime_create(int limit_count){
 
-	LIMITCOUNT_mtime = limit_count;
+   LIMITCOUNT_mtime = limit_count;
 
    sqlite3 *db;
    char *zErrMsg = 0;
@@ -198,7 +198,7 @@ int js_mtime_create(int limit_count){
    
    //match < limit LIMITCOUNT_mtime output
    num_mtime = 0;
-   sprintf(buffer,"SELECT PATH,TIME, TYPE from Registry where TIME > %s ORDER BY TIME LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
+   /*sprintf(buffer,"SELECT PATH,TIME, TYPE from Registry where TIME > %s ORDER BY TIME LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
@@ -217,7 +217,7 @@ int js_mtime_create(int limit_count){
    }else{
      // fprintf(stdout, "Operation done successfully\n");
    }
-
+   */
    sprintf(buffer,"SELECT URL, TIME, TYPE from HISTORY where TIME > %s ORDER BY TIME LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
@@ -228,7 +228,7 @@ int js_mtime_create(int limit_count){
      // fprintf(stdout, "Operation done successfully\n");
    }
 
-    sprintf(buffer,"SELECT URL, TIME, TYPE from DOWNLOAD where TIME > %s ORDER BY TIME LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
+    sprintf(buffer," SELECT PATH, time from USB where time > %s ORDER BY time LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
@@ -265,7 +265,7 @@ int js_mtime_create(int limit_count){
 
       //match > limit LIMITCOUNT_mtime output
    num_mtime = 0;
-   sprintf(buffer,"SELECT PATH,TIME, TYPE from Registry where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
+   /*sprintf(buffer,"SELECT PATH,TIME, TYPE from Registry where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
@@ -284,7 +284,7 @@ int js_mtime_create(int limit_count){
    }else{
       //fprintf(stdout, "Operation done successfully\n");
    }
-
+   */
    sprintf(buffer,"SELECT URL, TIME, TYPE from HISTORY where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
@@ -294,8 +294,8 @@ int js_mtime_create(int limit_count){
    }else{
      // fprintf(stdout, "Operation done successfully\n");
    }
-
-     sprintf(buffer,"SELECT URL, TIME, TYPE from DOWNLOAD where TIME < %s ORDER BY TIME DESC LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
+ 
+     sprintf(buffer,"SELECT PATH, time from USB where time < %s ORDER BY time DESC LIMIT %d",newValues_mtime[3],LIMITCOUNT_mtime);
 
    rc = sqlite3_exec(db, buffer, callbackm, (void*)&callbackData, &zErrMsg);
    if( rc != SQLITE_OK ){
